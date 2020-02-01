@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no" />-->
+
+    <meta charset="UTF-8">
+    <title>L'aragosta alla catalana verificata blockchain</title>
+    <meta name="description" content="pOsti ti propone ricette certificate dai migliori Chef del mondo" />
+
+    <!-- <link rel="icon" type="image/png" href="../static/images/bloody-mary/favicon.png" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/bodyScrollLock.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        html * {
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        
+        body {
+            margin: 0;
+            font-size: 16pt;
+        }
+        /* @font-face {
+            font-family: titolo;
+            src: url(font/galura/titolo.otf);
+        }
+        
+        @font-face {
+            font-family: sottotitolo;
+            src: url(font/galura/sottotitolo.ttf);
+        }
+        
+        @font-face {
+            font-family: testo;
+            src: url(font/galura/testo.ttf);
+        } */
+        /* .head-title-text {
+            font-family: titolo;
+        }
+        
+        .head-text {
+            font-family: sottotitolo;
+        } */
+        
+        .cover {
+            /*background-image: url("img/v5/test/v1/cover.png"), url("img/test/Copertina/black.jpg");*/
+            /*-webkit-background-size: auto 100%, auto 50%;*/
+            /*background-size: auto 100%, auto 50%;*/
+            background-image: url("images/gallura/sfondo_posti_cover.png"), url("images/gallura/sfondo_posti_bn_cover.jpg");
+            -webkit-background-size: auto 100%, auto 100%;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            background-color: white;
+            /*background-size: 95vw 100vh;*/
+        }
+        /* .collaboration-logo {
+            position: absolute;
+            background-image: url("images/gallura/logo_gallura_cover.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: top center;
+            height: 0;
+            width: 0;
+            left: 0%;
+            top: 50%;
+            display: block;
+        } */
+        /* .logo-cover {
+            position: absolute;
+            margin-top: 16vh;
+            margin-left: -20vw;
+            width: 350px;
+            left: 50%;
+            top: 50%;
+            resize: both;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <section class="posti-section cover" id="cover">
+
+        <!-- <a class="collaboration-logo"></a> -->
+        <!-- <a id="link" style="position: absolute;text-align: center; font-size: 1.5em; padding-left: 3%; padding-top: 3%" href="/?lang=en">EN</a> -->
+        <a class="blockchain-text">traccia in <b>blockchain</b></a>
+        <a class="traccia-text"><b>l'aragosta alla catalana</b> di</a>
+        <!-- <a class="bottom-button" data-modal="modal0"></a> -->
+        <img src="images/gallura/logo_gallura_cover.jpg" class="logo-cover">
+    </section>
+
+    <section class="posti-section page" id="page1">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="page-logo" id="logo1"></a>
+        <div class="text">
+            <a class="head-title-text"><b>PROVENIENZA</b></a><br>
+            <a class="head-text"> <b>Cabras</b><br><b>Sardegna</b>
+                <br><b>Latitudine: 39°55'55"56 N</b><br><b>Longitudine: 08°32'2"04 E</b></a>
+            <br><br>
+            <b><u>Approfondimento</u></b><br> Quest’aragosta è un prodotto locale,<br> 100% italiano. Porta con sé<br> il profumo del Mar Mediterraneo.<br> È stata pescata nel Golfo di Oristano,<br> il <b>15 ottobre 2019</b>.<br> La pesca avviene tra
+            marzo e ottobre,<br> negli altri mesi si sposta un po' più a Sud.
+        </div>
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page2">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="page-logo" id="logo2"></a>
+        <div class="text">
+            <a class="head-title-text"> <b>HABITAT</b></a><br>
+            <a class="head-text"><b>Mar Mediterraneo</b><br>
+                <b>La giusta salinità e</b><br>
+                <b>le correnti creano</b><br>
+                <b>l’habitat ideale</b>
+            </a>
+            <br><br>
+            <b><u>Approfondimento</u></b><br> L’acqua di mare ha<br> salinità media di 37% e temperatura media di 13°.<br><br> Il retrogusto salino di questa aragosta<br> dipende dal mare: è il Mediterraneo che<br> differenzia nei colori e nei sapori<br>            la nostra aragosta da quella dei mari tropicali.<br> La giusta salinità e la giusta temperatura dell’acqua:<br> La sua qualità è espressione<br> del bellissimo mare sardo.
+        </div>
+        <!-- <a class="bottom-button" data-modal="modal2"></a> -->
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page3">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="page-logo" id="logo3"></a>
+        <div class="text">
+            <a class="head-title-text"> <b>TRASPORTO</b></a><br>
+            <a class="head-text"> <b>In nave Tirrenia.</b><br>
+                <b>L'aragosta è</b><br>
+                <b>stata trasportata</b><br>
+                <b>il 15 ottobre 2019</b><br>
+            </a>
+
+            <br><br>
+            <b><u>Approfondimento</u></b><br> Una volta pescata, l’aragosta ha proseguito il suo viaggio in nave.<br> Ha attraversato il <b>mare</b><br>
+            <b>avvolta in paglia umida</b><br> per poterle dare il massimo confort.<br> È partita da Olbia ed è arrivata nel porto di<br>
+            <b>Civitavecchia</b> dopo <b>7 ore</b> di navigazione.
+        </div>
+        <!-- <a class="bottom-button" data-modal="modal3"></a> -->
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page4">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="page-logo" id="logo4"></a>
+        <div class="text">
+            <a class="head-title-text"> <b>CONSERVAZIONE</b></a><br>
+            <a class="head-text"> <b>Acquario Gallura</b><br>
+                <b>Tempo medio di</b><br>
+                <b>permanenza del</b><br>
+                <b>crostaceo: 60 ore</b><br>
+            </a>
+
+            <br><br>
+            <b><u>Approfondimento</u></b><br> Dopo l’arrivo in terra ferma<br> l’aragosta è stata collocata<br> nell’acquario del ristorante di dimensioni<br> 2,5mt x 70 x 70, super controllato<br> e soggetto ogni 3 mesi<br> alla completa sostituzione
+            dei filtri.<br> 850 litri d’acqua con la giusta salinità e la giusta<br> temperatura per ricreare il suo habitat marino ideale.<br>
+            <b>Temperatura media dell’acqua: 13,5°</b>
+
+
+        </div>
+        <!-- <a class="bottom-button" data-modal="modal3"></a> -->
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page5">
+        <!-- <a class="bottom-button-page"></a> -->
+        <a class="page-logo" id="logo5"></a>
+        <div class="text">
+            <a class="head-title-text"> <b>PREPARAZIONE</b></a><br>
+            <a class="head-text"> <b>Data: oggi</b><br> <b>Cottura: 18 minuti</b><br>
+                <b>La ricetta omaggia</b></a><br>
+            <b>la tradizione</b><br>
+            <b>dei pescatori</b></a><br>
+            <br> Un’immersione in court-buillon<br> alla temperatura di circa 80° è<br> il segreto di questo piatto, insieme<br> agli ingredienti di accompagno:<br> verdurine fresche dell’orto, e un olio delicato, dedicato soltanto a questa ricetta.<br>            L’aragosta alla catalana è un’esplosione<br> di sapori, profumi, colori.<br> Il suo mare e l’arte dello chef<br> ne hanno preservato tutte le sue qualità organolettiche e nutrizionali.<br> Proteine: 20,2/100 gr.<br>
+        </div>
+        <!-- <a class="bottom-button" data-modal="modal3"></a> -->
+        <!-- <a class="bottom-button-page"></a> -->
+    </section>
+
+
+    <!-- <section class="posti-section" id="quiz">
+        <div class="modal-content">
+            <span class="closeQuiz" data-modal="quiz"></span>
+            <div class="popup-content" style="margin-top: 10vh">
+                <b>Firma il tuo Bloody Mary<br></b> Vuoi creare un nuovo cocktail?
+                <br>
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Inserisci i tuoi dati
+                <input type="text" placeholder="nome e cognome" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="nome_cognome">
+                <br>
+                <input type="text" placeholder="e-mail" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="e_mail">
+                <br>
+                <br>
+                <input type="checkbox" style="width: 25px; height: 25px" value="OK" id="form_privacy" onChange="azione()">
+                <span style="font-size: 0.7em">Ho letto l’informativa Privacy e acconsento al trattamento dei miei dati
+                    personali per le finalità sopra descritte</span>
+                <br>
+                <br><span style="font-size: 1.35em">&#8226;</span> &nbsp; Aggiungi il tuo ingrediente speciale
+                <br>
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px;  margin-top: 20px" value="cetriolo" />&nbsp;&nbsp; Cetriolo <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="aneto" /> &nbsp;&nbsp;Aneto<br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="brodo" /> &nbsp;&nbsp;Brodo di vongole <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="wasabi" /> &nbsp;&nbsp;Wasabi <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="gambero" /> &nbsp;&nbsp;Gambero<br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="pancetta" /> &nbsp;&nbsp;Pancetta croccante <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="basilico" /> &nbsp;&nbsp;Basilico <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="altro" />&nbsp;&nbsp;
+                <input type="text" style="height:40px; width: 35vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " placeholder="altro" id="altro"><br />
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Gioca con noi!
+                <input type="text" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px " placeholder="Il nome del tuo cocktail" id="nome_cocktail">
+                <br>
+                <span style="font-size: 0.7em">La tua nuova ricetta di Bloody Mary sarà tracciata in blockchain*</span>
+                <br>
+                <input value="invia" style="width: 80vw; height:80px; margin-top: 20px" />
+                <br><br>
+                <span style="font-size: 0.5em">*nei prossimi giorni riceverai il certificato digitale della tua
+                    ricetta</span>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Popup itself -->
+    <!-- <div id="modal0" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal0"></span>
+            <div class="popup-content" style="padding-top: 17%">
+                La blockchain è una tecnologia basata su un registro pubblico e distribuito, condiviso da più partecipanti di un network e fondato su una logica peer-to-peer. Il registro è strutturato come una catena di blocchi attraverso cui sono scambiate le transazioni:
+                la validazione è affidata a un meccanismo di consenso che investe tutti i nodi della rete. Le principali caratteristiche della tecnologia blockchain sono l’immutabilità del registro, la tracciabilità delle transazioni e la sicurezza basata
+                su tecniche crittografiche.
+                <br><br> Questo progetto è realizzato sulla piattaforma Blockchain Bitcoin .
+                <br>
+                <a href="http://blockchain.posti.world:3309">Verifica le informazioni su blockchain</a>
+                <br><br> Promotori
+                <br>
+                <div style="font-size: 0.8em"><a href="http://posti.world">pOsti</a> e
+                    <a href="https://antonellocolonna.it">Chef Antonello Colonna</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="quiz" class="modal">
+        <div class="modal-content-quiz">
+            <span class="closeQuiz" data-modal="quiz"></span>
+            <div class="popup-content" style="margin-top: 10vh">
+                <b>Firma il tuo Bloody Mary<br></b>
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Inserisci i tuoi dati
+                <br>
+                <input type="text" onclick="javascript:bgWhiteNomeCognome()" placeholder="nome e cognome" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="nome_cognome">
+                <br>
+                <input type="text" onclick="javascript:bgWhiteMail()" placeholder="e-mail" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="e_mail">
+                <br>
+                <br>
+                <input type="checkbox" style="width: 25px; height: 25px" value="OK" id="form_privacy" onclick="javascript:bgWhitePrivacy()">
+                <span id="form_privacy_text" style="font-size: 0.7em">Ho letto l’informativa <a href="https://www.iubenda.com/privacy-policy/11564993" style="font-size: 1.0em" title="Privacy Policy ">privacy</a> e acconsento al trattamento dei miei dati   
+                    personali per le finalità sopra descritte</span>
+                <br>
+                <br><span style="font-size: 1.35em">&#8226;</span> &nbsp; <span id="ingredienti_text" style="font-size: 1.0em">Crea il tuo cocktail aggiungendo un ingrediente speciale</span>
+                <br>
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px;  margin-top: 20px" id="cetriolo" />&nbsp;&nbsp; Cetriolo <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="aneto" /> &nbsp;&nbsp;Aneto<br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="brodo" /> &nbsp;&nbsp;Brodo di vongole <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="wasabi" /> &nbsp;&nbsp;Wasabi <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="gambero" /> &nbsp;&nbsp;Gambero<br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="pancetta" /> &nbsp;&nbsp;Pancetta croccante <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="basilico" /> &nbsp;&nbsp;Basilico <br />
+                <input onclick="javascript:bgWhiteIngredienti()" id="altro" type="text" style="margin-left: 10vw;height:40px; width: 50vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " placeholder="altro"><br
+                />
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Dai un nome al tuo cocktail e condividi la foto sui social con l’hashtag #bloodymarydigitale <br><br> <input onclick="javascript:bgWhiteNomeCocktail()" type="text" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px "
+                    placeholder="Il nome del tuo cocktail" id="nome_cocktail">
+                <br><br> Il miglior Mixologist del giorno riceverà un fantastico premio!
+                <br><br>
+                <span style="font-size: 0.75em"><b>La tua nuova ricetta di Bloody Mary sarà tracciata in blockchain</b></span>
+                <br>
+                <input type="submit" onclick="javascript:userActionPOST()" value="invia" style="width: 80vw; height:80px; margin-top: 20px;font-size : 50px">
+                <br>
+                <br>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal2"></span>
+
+            <a class="popup-logo" id="logo-popup2"></a>
+            <div class="popup-content">
+
+                <img src="img/v5/test/v1/invio/territorio nero.png" class="popup-logo"><br>
+                <b>TERRITORIO</b><br> Racchiusa fra la tonalite dell’Adamello Presanella e le calcaree Dolomiti di Brenta, la Val Rendena si estende dal paesino di Verdesina fino ai 1.650 m. di Madonna di Campiglio/Campo Carlo Magno. È ricca di acque,
+                di boschi e di pascoli: un perfetto ecosistema dove anche la fauna vanta diversi esemplari. Le sue bellezze sono protette dal Parco Naturale Adamello Brenta. I suoi caratteristici borghi, ricchi di storia e tradizioni, sono espressione
+                di una cultura alpina.<br><br> La temperatura media settimanale degli ultimi 7 giorni (<a style="font-size: 1em" th:text="${aweek}+'-'+${today}">22-28</a>) è di <a style="font-size: 1em" th:text="${tempM}">18</a>°
+
+                <br><br> Foto rilevata dalla stazione di monitoraggio il: <time th:text="${time}" style="font-size: 1em"></time><br>
+                <br>
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img class="monitor" id="stazione" th:src="'http://myxfarm.com/xsense/89462038005001835702/'+${pname}" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+                <br>
+
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg2" src="images/rendena/Az.Rendena_Territorio_1.jpg" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_1.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_2.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_3.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal3"></span>
+            <a class="popup-logo" id="logo-popup3"></a>
+            <div class="popup-content">
+                <img src="img/v5/test/v1/invio/malga nera.png" class="popup-logo"><br>
+                <b>MALGA</b><br> La Malga Bandalors è sul versante del Doss del Sabion di Giustino. È anche nota come ‘Bregn de l’Ors’: in dialetto locale significa “abbeveratoio dell’orso”, perché sembra che in passato gli orsi fossero soliti dissetarsi
+                al “bregn” di legno. Qui, da giugno a settembre, le mucche fanno alpeggio. C’è una stalla e un’antica casera: il malgaro si prende cura di 107 mucche. Le mucche trascorrono l’intera giornata al pascolo. La notte a volte rientrano in stalla,
+                a volte scelgono di riposare intorno alla malga, sotto le stelle...
+                <br><br>
+
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg3" src="images/rendena/Az.Rendena_Malga_1_vista Bandalors.jpeg" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+
+
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Malga_1_vista Bandalors.jpeg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Malga_2_abbeveratoio.jpg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                &lt;!&ndash;<div class="column">&ndash;&gt;
+                &lt;!&ndash;<img src="" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">&ndash;&gt;
+                &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;<div class="column">&ndash;&gt;
+                &lt;!&ndash;<img src="images/rendena/Az.Rendena_Malga_2_abbeveratoio.jpeg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">&ndash;&gt;
+                &lt;!&ndash;</div>&ndash;&gt;
+                </div>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal4"></span>
+            <div class="popup-content">
+
+                <a class="popup-logo" id="logo-popup4"></a>
+                <img src="img/v5/test/v1/invio/pascolo nero.png" class="popup-logo"><br>
+                <b>PASCOLO</b><br> Ogni giorno la nostra mucca percorre i pendii del Doss del Sabion salendo verso la località Madonnina, per poi ridiscendere a sera verso i prati circostanti la Malga Bandalors. È in moto continuo, perché è una mucca
+                curiosa e super attiva. Beve acqua pura e si nutre dei fiori e dell’erba fresca del pascolo in quota: gli ‘slavazuoi’ (spinaci selvatici) e il timo di montagna sono il suo pasto preferito. Il suo latte, grazie a questa alimentazione, è
+                gustoso e nutriente, ricco di beta carotene.
+
+                <br><br>
+
+                <div class="videoyoutube">
+                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/CEx40HKWtOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg4" src="images/rendena/Az. Rendena_Pascolo_1.JPG" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+
+
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az. Rendena_Pascolo_1.JPG" alt="expandedImg4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az. Rendena_Pascolo_2.JPG" alt="expandedImg4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal5"></span>
+            <a class="popup-logo" id="logo-popup5"></a>
+            <div class="popup-content">
+
+                <img src="img/v5/test/v1/invio/produzione nero.png" class="popup-logo"><br>
+
+                <b>FORMAGGIO</b><br> Per la produzione di una forma da 4,5 kg ci sono voluti 45 litri di latte. Latte, caglio, sale... e la mano del casaro: sono questi il segreto di un buon formaggio di malga. Riflette nei suoi aromi il gusto delle erbe
+                di cui la mucca Rendena si è nutrita. Sul suo profumo e sapore incide anche il tempo di stagionatura:
+                <br> 5 mesi alla temperatura media di 10,5°.
+                <br><br>
+                <a style="font-size: 0.8em"><b>Azienda Agricola<br>
+                        Fattoria Antica Rendena</b> </a><br><br>
+                <a href="http://www.fattoria-rendena.it" style="font-size: 0.8em">www.fattoria-rendena.it</a>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <script>
+        var btn = document.getElementsByClassName("bottom-button");
+        var targetElement0 = document.querySelector("#modal0");
+        var targetElement1 = document.querySelector("#modal1");
+        var targetElement2 = document.querySelector("#modal2");
+        var targetElement3 = document.querySelector("#modal3");
+        var targetElement4 = document.querySelector("#modal4");
+        var targetElement5 = document.querySelector("#modal5");
+
+        // alert(btn);
+        // Get the <span> element that closes the modal
+        // var span = document.getElementsByClassName("close")[0];
+        // alert(span);
+        // When the user clicks the button, open the modal
+
+        for (var i = 0; i < btn.length; i++) {
+            var currentBtn = btn[i];
+            currentBtn.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "block";
+                bodyScrollLock.disableBodyScroll(targetElement0);
+                bodyScrollLock.disableBodyScroll(targetElement1);
+                bodyScrollLock.disableBodyScroll(targetElement2);
+                bodyScrollLock.disableBodyScroll(targetElement3);
+                bodyScrollLock.disableBodyScroll(targetElement4);
+                bodyScrollLock.disableBodyScroll(targetElement5);
+
+                $.scrollify.disable();
+
+            }, false);
+
+            var span = document.getElementsByClassName("close")[i];
+            span.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "none";
+                // bodyScrollLock.enableBodyScroll(targetElement);
+                // bodyScrollLock.clearAllBodyScrollLocks();
+                $.scrollify.enable();
+            })
+        }
+
+        //Pulsante quiz
+        var btnQuiz = document.getElementsByClassName("quiz-button");
+        var targetElementQuiz = document.querySelector("#quiz");
+        for (var i = 0; i < btnQuiz.length; i++) {
+            var currentBtn = btnQuiz[i];
+            currentBtn.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "block";
+                bodyScrollLock.disableBodyScroll(targetElementQuiz);
+                $.scrollify.disable();
+            }, false);
+
+            var span = document.getElementsByClassName("closeQuiz")[i];
+            span.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "none";
+                // bodyScrollLock.enableBodyScroll(targetElement);
+                // bodyScrollLock.clearAllBodyScrollLocks();
+                $.scrollify.enable();
+            })
+        }
+
+        function myFunction(imgs) {
+            var expandImg = document.getElementById(imgs.alt);
+            // var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            // imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        //     $.scrollify.disable();
+        // };
+
+        // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+        // };
+
+        // span = document.getElementsByClassName("close")[1];
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+
+        // };
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target === modal) {
+        //         modal.style.display = "none";
+        //         $.scrollify.enable()
+        //     }
+        // };
+
+        //COMINICAZIONE VERSO DB
+        const userActionGET = async() => {
+            const response = await fetch('http://80.211.104.174:5000/api/QuizPosti/');
+            const myJson = await response.json(); //extract JSON from the http response
+            // do something with myJson
+            console.log(myJson);
+        }
+
+        const userActionPOST = async() => {
+
+            var nome_cognome = document.getElementById("nome_cognome").value;
+            var e_mail = document.getElementById("e_mail").value;
+
+            var form_privacy = document.getElementById("form_privacy").checked;
+
+            var cetriolo = document.getElementById("cetriolo").checked;
+            var aneto = document.getElementById("aneto").checked;
+            var brodo = document.getElementById("brodo").checked;
+            var wasabi = document.getElementById("wasabi").checked;
+            var gambero = document.getElementById("gambero").checked;
+            var pancetta = document.getElementById("pancetta").checked;
+            var basilico = document.getElementById("basilico").checked;
+            var altro = document.getElementById("altro").value;
+            console.log(altro);
+            altro = altro.replace(/'/g, "&#39;");
+            // 
+            console.log(altro);
+
+            var nome_cocktail = document.getElementById("nome_cocktail").value;
+
+            var bodyStr = "";
+
+            if (form_privacy & nome_cognome != "" & e_mail != "" & nome_cocktail != "") {
+
+                bodyStr = "{'nome': '" + nome_cognome + "', " +
+                    "'cognome': 'POSTI', " +
+                    "'mail': '" + e_mail + "', " +
+                    "'cetriolo': " + cetriolo + ", " +
+                    "'aneto': " + aneto + ", " +
+                    "'brodo': " + brodo + ", " +
+                    "'wasabi': " + wasabi + ", " +
+                    "'gambero': " + gambero + ", " +
+                    "'pancetta': " + pancetta + ", " +
+                    "'basilico': " + basilico + ", " +
+                    "'altro': '" + altro + "', " +
+                    "'nome_cocktail': '" + nome_cocktail + "' " +
+                    "}";
+
+                // body: "{'nome_cognome': '" + nome_cognome + "', " +
+                //     "'mail': '" + e_mail + "', " +
+                //     "'cetriolo': " + cetriolo + ", " +
+                //     "'aneto': " + aneto + ", " +
+                //     "'brodo': " + brodo + ", " +
+                //     "'wasabi': " + wasabi + ", " +
+                //     "'gambero': " + gambero + ", " +
+                //     "'pancetta': " + pancetta + ", " +
+                //     "'basilico': " + basilico + ", " +
+                //      "'altro': '" + altro + "'', " +
+                //     "'nome_cocktail': " + nome_cocktail + ", " +
+                //     "}";     
+
+                // bodyStr = "{" +
+                //     "'nome': 'VINCENZO'," +
+                //     "'cognome': 'MOLITIENO'," +
+                //     "'mail': 'vincenzo@mail.com'," +
+                //     "'cetriolo': true," +
+                //     "'aneto': false," +
+                //     "'brodo': false," +
+                //     "'wasabi': false," +
+                //     "'gambero': true," +
+                //     "'pancetta': true," +
+                //     "'basilico': false," +
+                //     "'altro': 'ALTRO'," +
+                //     "'nome_cocktail': 'versione 2'" +
+                //     "}";
+
+                console.log(bodyStr);
+                const response = await fetch('http://80.211.104.174:5000/api/QuizPosti/', {
+                    method: 'POST',
+                    body: bodyStr,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'fuelmatic'
+                    }
+                });
+
+                alert("Grazie!! Hai creato il tuo cocktail\n\n" +
+                    "Nei prossimi giorni riceverai il certificato digitale della tua ricetta");
+
+                resertForm();
+
+            } else {
+                alert("Compilare i canmpi obbligatori!!");
+
+                if (!(cetriolo || aneto || brodo || wasabi || gambero || pancetta || basilico || (altro != ""))) document.getElementById("ingredienti_text").style.backgroundColor = "red";
+
+                if (!form_privacy) document.getElementById("form_privacy_text").style.backgroundColor = "red";
+
+                if (nome_cognome == "") document.getElementById("nome_cognome").style.backgroundColor = "red";
+
+                if (e_mail == "") document.getElementById("e_mail").style.backgroundColor = "red";
+
+                if (nome_cocktail == "") document.getElementById("nome_cocktail").style.backgroundColor = "red";
+
+            }
+
+        }
+
+
+        function bgWhitePrivacy() {
+            document.getElementById("form_privacy_text").style.backgroundColor = "white";
+        }
+
+        function bgWhiteNomeCognome() {
+            document.getElementById("nome_cognome").style.backgroundColor = "white";
+        }
+
+        function bgWhiteMail() {
+            document.getElementById("e_mail").style.backgroundColor = "white";
+        }
+
+        function bgWhiteNomeCocktail() {
+            document.getElementById("nome_cocktail").style.backgroundColor = "white";
+        }
+
+        function bgWhiteIngredienti() {
+            if ((cetriolo || aneto || brodo || wasabi || gambero || pancetta || basilico || (altro != ""))) document.getElementById("ingredienti_text").style.backgroundColor = "white";
+        }
+
+        function resertForm() {
+
+            document.getElementById("nome_cognome").value = "";
+            document.getElementById("e_mail").value = "";
+
+            document.getElementById("form_privacy").checked = false;
+
+            document.getElementById("cetriolo").checked = false;
+            document.getElementById("aneto").checked = false;
+            document.getElementById("brodo").checked = false;
+            document.getElementById("wasabi").checked = false;
+            document.getElementById("gambero").checked = false;
+            document.getElementById("pancetta").checked = false;
+            document.getElementById("basilico").checked = false;
+            document.getElementById("altro").value = "";
+
+            document.getElementById("nome_cocktail").value = "";
+        }
+    </script> -->
+
+    <!-- <script type="text/javascript">
+        (function(w, d) {
+            var loader = function() {
+                var s = d.createElement("script"),
+                    tag = d.getElementsByTagName("script")[0];
+                s.src = "https://cdn.iubenda.com/iubenda.js";
+                tag.parentNode.insertBefore(s, tag);
+            };
+            if (w.addEventListener) {
+                w.addEventListener("load", loader, false);
+            } else if (w.attachEvent) {
+                w.attachEvent("onload", loader);
+            } else {
+                w.onload = loader;
+            }
+        })(window, document);
+    </script> -->
+
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+</body>
+
+</html>

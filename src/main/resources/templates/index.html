@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            padding: 0;
+            margin: 0;
+            /*--bar-height: 100px;*/
+            /*--extra-space: 60px;*/
+        }
+
+        body {
+            overflow: scroll;
+
+            scroll-snap-type: y mandatory;
+            /*scroll-snap-stop: always;*/
+            /* Reserve space for header and additional space so above page are visible a bit*/
+            /*scroll-padding-top:  calc(var(--bar-height) + var(--extra-space));*/
+
+            position: absolute;
+
+            top:0;
+            bottom:0;
+            left: 0;
+            right: 0;
+            /*padding: var(--bar-height) 0 0 0;*/
+            margin: 0;
+            /* Enable Safari touch scrolling physics which is needed for scroll snap */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        p{
+            margin: 0;
+        }
+
+        section {
+            scroll-snap-align: start; /* snap align start */
+
+            height: 100vh;
+            min-height:100%;
+            background-repeat:no-repeat;
+            background-position: center center;
+            padding: 0;
+            /*background-size: auto 100%;*/
+            /*-webkit-background-size: auto 100%;*/
+            /*-moz-background-size: auto 100%;*/
+            /*-o-background-size: auto 100%;*/
+            background-size: auto 100%;
+            -webkit-background-size: auto 100%;
+            -moz-background-size: auto 100%;
+            -o-background-size: auto 100%;
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+
+            /*border-top: 2px black solid;*/
+            /*font-size: 36px;*/
+        }
+
+        #section1{
+            display: inline-block;
+            /*background-color: #007bff;*/
+        }
+
+        #section2{
+            background-color: greenyellow;
+        }
+
+        #section3{
+            background-color: red;
+        }
+
+        .content {
+            background-color: #007bff;
+            width: 100%;
+        }
+
+        .info {
+            width: 100%;
+            background-color: #0f6674;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="section1">
+        <p>Section 1</p>
+        <div class="content"></div>
+        <div class="info"></div>
+    </section>
+    <section id="section2">
+        <p>Section 2</p>
+    </section>
+    <section id="section3">
+        <p>Section 3</p>
+    </section>
+</body>
+</html>

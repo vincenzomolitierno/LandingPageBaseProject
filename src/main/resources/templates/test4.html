@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .posti-section {
+            /*background-image: url("img/optimized/landing-vino200h.png");*/
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: auto 100%;
+            /*height: 100vh;*/
+            /*min-height:100%;*/
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+
+            text-align: center;
+            align-content: center;
+        }
+
+        .scroll-next {
+            top: 70%;
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*vertical-align: bottom;*/
+            /*position: relative;*/
+            /*bottom: 10%;*/
+            /*left: 40%;*/
+            height: 10%;
+            width: 20%;
+            /*background-color: transparent;*/
+
+        }
+        .first {
+            top: 80%;
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*vertical-align: bottom;*/
+            /*position: relative;*/
+            /*bottom: 10%;*/
+            /*left: 40%;*/
+            height: 10%;
+            width: 20%;
+            /*background-color: transparent;*/
+
+        }
+
+        .scroll-prev {
+            height: 10%;
+            width: 20%;
+            top: 8%;
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*testing*/
+
+        .first-section {
+            /*background-image: url("img/optimized/landing-vino200h.png");*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*background-size: auto 100%;*/
+            /*height: 100vh;*/
+            /*min-height:100%;*/
+
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            text-align: center;
+            align-content: center;
+        }
+
+        .top-button {
+            background-image: url("img/test/arrow.png");
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            max-height: 10vh;
+            max-width: 10vh;
+            height: 5vh;
+            width: 10%;
+            /*top: 10vh;*/
+
+            /*max-width:100%;*/
+            /*max-height:100%;*/
+            /*height: 10vh;*/
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .bottom-button {
+            background-image: url("img/test/cover-button.png");
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+
+            height: 10vh;
+            width: 16vw;
+
+            /*top: 80vh;*/
+            /*position: absolute;*/
+            position: absolute;
+            right: 11vw;
+            bottom: 5vh;
+
+            /*keep element on center*/
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*vertical-align: bottom;*/
+            /*top: 60%;*/
+            /*bottom: 1%;*/
+            /*left: 45%;*/
+        }
+
+        .bottom-button-page {
+            background-image: url("img/test/white-button.png");
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+
+            height: 10vh;
+            width: 16vw;
+
+            /*top: 80vh;*/
+            /*position: absolute;*/
+            position: absolute;
+            right: 11vw;
+            bottom: 5vh;
+
+            /*keep element on center*/
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            /*vertical-align: bottom;*/
+            /*top: 60%;*/
+            /*bottom: 1%;*/
+            /*left: 45%;*/
+        }
+
+
+        .logo {
+            background-image: url("img/test/posti-logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 18vh;
+            width: 48vw;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            /*top: 5%;*/
+        }
+
+
+
+        #logo-cover {
+            top: 9vh;
+        }
+
+
+
+        p {
+            font-size: 250%;
+            color:white;
+        }
+
+        #test-section {
+            background-color: #0b0b0b;
+            /*background-image: url("img/optimized/background-large.png");*/
+        }
+
+        #test-section2 {
+            /*background-color: #0b0b0b;*/
+            background-image: url("img/test/cover-lines.png"), url("img/test/cover-background.jpg");
+            background-position: bottom center, top left;
+            background-repeat: no-repeat, no-repeat;
+            -webkit-background-size: 90vw 85vh, 100vw 50vh;
+            background-size: 90vw 85vh, 100vw 50vh;
+
+        }
+
+        #cover-section {
+            /*background-image: url("img/new/lines.png"), url("img/test/cover-background.jpg");*/
+            /*background-image: url("img/new/cover-lines.png"), url("img/test/cover-background.jpg");*/
+            background-image: url("img/v2/lines-3.png"), url("img/test/cover-background.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-position: bottom center, top left;
+            background-size: 80vw 80vh, 100vw 50vh;
+
+        }
+
+        .page {
+            background-image: url("img/v2/lines-section-new.png");
+            background-repeat: no-repeat;
+            background-position: top center;
+
+            background-size: 70vw 100vh;
+            /*background-size: 57vw 100vh;*/
+            background-color: #0b0b0b;
+            background-position-x: 32%;
+        }
+
+        /*#test-section3 {*/
+            /*background-image: url("img/v2/cover-lines-2.png"), url("img/test/cover-background.jpg");*/
+            /*background-repeat: no-repeat, no-repeat;*/
+            /*background-position: bottom center, top left;*/
+            /*background-size: contain, 100vw 50vh;*/
+
+        /*}*/
+
+        /*@media screen and (max-width: 600px) {*/
+            /*#test-section3 {*/
+                /*background-image: url("img/v2/cover-lines-2.png"), url("img/test/cover-background.jpg");*/
+                /*background-repeat: no-repeat, no-repeat;*/
+                /*background-position: bottom center, top left;*/
+                /*background-size: 100vw 100vh, 100vw 50vh;*/
+            /*}*/
+
+            /*.logo {*/
+                /*background-image: url("img/test/posti-logo.png");*/
+                /*background-size: 100% auto;*/
+                /*background-repeat: no-repeat;*/
+                /*background-position: center center;*/
+                /*height: 16vh;*/
+                /*width: 50vw;*/
+                /*position: relative;*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+                /*display: block;*/
+
+                /*!*top: 5%;*!*/
+            /*}*/
+        /*}*/
+
+        .cover-lines {
+            background-image: url("img/v2/cover-lines-2.png");
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-size: auto 100%;
+        }
+
+        /*POPUP*/
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<section class="posti-section" id="sectionTest">-->
+        <!--<img class="lines">-->
+    <!--</section>-->
+
+    <!--<section class="posti-section" id="test-section">-->
+        <!--&lt;!&ndash;<div class="first-section">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="lines"></a>&ndash;&gt;-->
+        <!--<a class="top-button"></a>-->
+        <!--&lt;!&ndash;<a class="logo"></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>Some text</p>&ndash;&gt;-->
+        <!--<a class="bottom-button"></a>-->
+        <!--&lt;!&ndash;<img class="top-button">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img class="bottom-button">&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</section>-->
+    <!--<section class="posti-section" id="test-section2">-->
+        <!--<a class="top-button"></a>-->
+        <!--<a class="logo"></a>-->
+        <!--<p>Some text</p>-->
+        <!--<a class="bottom-button"></a>-->
+        <!--&lt;!&ndash;<img class="top-button">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img class="bottom-button">&ndash;&gt;-->
+    <!--</section>-->
+    <section class="posti-section" id="cover-section">
+        <a class="logo" id="logo-cover"></a>
+        <a class="bottom-button" id="1"></a>
+    </section>
+    <section class="posti-section page">
+        <a class="bottom-button-page"></a>
+    </section>
+    <section class="posti-section page">
+        <a class="bottom-button-page"></a>
+    </section>
+    <section class="posti-section page">
+        <a class="bottom-button-page"></a>
+    </section>
+
+    <!--<section class="posti-section" id="section01">-->
+        <!--&lt;!&ndash;<a class="scroll-prev" href="#section01"></a>&ndash;&gt;-->
+        <!--<a class="scroll-next first" href="#section01"></a>-->
+    <!--</section>-->
+    <!--<section class="posti-section" id="section02">-->
+        <!--<a class="scroll-prev" href="#section01"></a>-->
+        <!--<a class="scroll-next" href="#section01"></a>-->
+    <!--</section>-->
+    <!--<section class="posti-section" id="section03">-->
+        <!--<a class="scroll-prev" href="#section01"></a>-->
+        <!--<a class="scroll-next" href="#section01"></a>-->
+    <!--</section>-->
+    <!--<section class="posti-section" id="section04">-->
+        <!--<a class="scroll-prev" href="#section01"></a>-->
+        <!--<a class="scroll-next" href="#section01"></a>-->
+    <!--</section>-->
+
+    <!--<section class="posti-section" id="section05">-->
+        <!--<a class="scroll-prev" href="#section01"></a>-->
+        <!--<a class="scroll-next" href="#section01"></a>-->
+    <!--</section>-->
+    <!--<section class="posti-section" id="section06">-->
+        <!--<a class="scroll-prev" href="#section01"></a>-->
+        <!--<a class="scroll-next" href="#section01"></a>-->
+    <!--</section>-->
+
+    <!-- Popup itself -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        alert(modal);
+        // Get the button that opens the modal
+        var btn = document.getElementById("1");
+        alert(btn);
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        alert(span);
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/main.js"></script>
+    </body>
+</html>

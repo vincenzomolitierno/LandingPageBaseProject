@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no" />-->
+
+    <meta charset="UTF-8">
+    <title>Il BloodyMary verificato blockchain</title>
+    <meta name="description" content="pOsti ti propone ricette certificate dai migliori Chef del mondo" />
+
+    <link rel="icon" type="image/png" href="../static/images/bloody-mary/favicon.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/bodyScrollLock.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        html * {
+            font-size: 1.3em;
+            /*color: #000 !important;*/
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        
+        .head-title-text {
+            font-size: 1.7em;
+        }
+        
+        .head-text {
+            font-size: 1.31em;
+        }
+        
+        .popup-content img {
+            max-width: 100%;
+        }
+        
+        div.text {
+            position: absolute;
+            /*width: content-box;*/
+            /*position: center;*/
+            /*align-content: center;*/
+            /*margin: auto;*/
+            width: fit-content;
+            /*width: 70%;*/
+            left: 50%;
+            /*right: 0;*/
+            padding-left: 2vw;
+            margin-top: 17vh;
+            margin-left: -25%;
+            margin-right: auto;
+            color: white;
+            /*position: center;*/
+            /*left: 50%;*/
+            /*padding-right: 20%;*/
+            /*margin-right: 30%;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+        }
+        
+        .modal-content {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .modal-content-quiz {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media screen and (min-device-width: 763px) {
+            html * {
+                font-size: 1.2em;
+            }
+            div.text {
+                position: absolute;
+                /*width: content-box;*/
+                /*position: center;*/
+                /*align-content: center;*/
+                /*margin: auto;*/
+                width: fit-content;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                margin-top: 17vh;
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+                /*position: center;*/
+                /*left: 50%;*/
+                /*padding-right: 20%;*/
+                /*margin-right: 30%;*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+            }
+            .page-logo {
+                position: absolute;
+                width: 15vh;
+                height: 15vh;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                /*margin-top: 2vh;*/
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+            }
+        }
+        
+        .page {
+            /*background-image: url("img/v5/lines-button-2.png");*/
+            /*background-image: url("img/v5/cover-lines-logo-button.png");*/
+            background-image: url("img/v5/test/v1/page.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: top center;
+            /*background-size: 95vw 100vh;*/
+            /*background-size: 57vw 100vh;*/
+            /*background-color: #0b0b0b;*/
+            /*background-position-x: 32%;*/
+        }
+        
+        .last {
+            background-image: url("static/img/v5/test/v1/invio/IphoneX ultima pagina landing.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: top center;
+        }
+        
+        .cover {
+            /*background-image: url("img/v5/test/v1/cover.png"), url("img/test/Copertina/black.jpg");*/
+            /*-webkit-background-size: auto 100%, auto 50%;*/
+            /*background-size: auto 100%, auto 50%;*/
+            background-image: url("images/bloody-mary/IphoneXottobre2019_1.png"), url("images/bloody-mary/IphoneXsfondilow.jpg");
+            -webkit-background-size: auto 100%, auto 100%;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            background-color: white;
+            /*background-size: 95vw 100vh;*/
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        .posti-section {
+            /*background-image: url("img/optimized/landing-vino200h.png");*/
+            background-repeat: no-repeat;
+            /*background-position: center center;*/
+            /*background-size: auto 100%;*/
+            /*height: 100vh;*/
+            /*min-height:100%;*/
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            /*text-align: center;*/
+            align-content: center;
+        }
+        
+        .bottom-button {
+            /*background-image: url("img/test/cover-button.png");*/
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 10vh;
+            width: 30vw;
+            /*top: 80vh;*/
+            /*position: absolute;*/
+            position: absolute;
+            left: 50%;
+            margin-left: 5%;
+            bottom: 5vh;
+            /*keep element on center*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            display: block;
+            /*vertical-align: bottom;*/
+            /*top: 60%;*/
+            /*bottom: 1%;*/
+            /*left: 45%;*/
+        }
+        
+        .quiz-button {
+            /*background-image: url("img/test/cover-button.png");*/
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 10vh;
+            width: 30vw;
+            display: block;
+        }
+        
+        .close {
+            height: 10vh;
+            width: 15vw;
+            position: absolute;
+        }
+        
+        .closeQuiz {
+            height: 8vh;
+            width: 10vw;
+            position: absolute;
+            left: 50%;
+            margin-left: -7.5vw;
+            margin-top: 2.5vh;
+            background-image: url("images/bloody-mary/up-arrow.png");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: top center;
+        }
+        
+        .blockchain-text {
+            color: white;
+            position: absolute;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*left: 50%;*/
+            /*margin-left: -20%;*/
+            width: 100%;
+            text-align: center;
+            top: 37%;
+            /*font-size: 1.4em;*/
+        }
+        
+        .traccia-text {
+            color: black;
+            position: absolute;
+            /*left: auto;*/
+            /*right: auto;*/
+            /*text-align: center;*/
+            /*padding-right: auto;*/
+            /*padding-left: auto;*/
+            /*right: 50%;*/
+            /*padding-top: 53%;*/
+            width: 100%;
+            text-align: center;
+            top: 53%;
+            /*font-size: 1.1em;*/
+        }
+        
+        .collaboration-logo {
+            position: absolute;
+            background-image: url("images/bloody-mary/LogoAntonelloColonna.png");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: top center;
+            margin-top: 15vh;
+            height: 21vh;
+            width: 50vw;
+            left: 26vw;
+            top: 50%;
+            display: block;
+        }
+        
+        .page-logo {
+            position: absolute;
+            width: 26vw;
+            height: 10vh;
+            left: 50%;
+            top: 2vh;
+            color: white;
+            margin-left: -240px;
+        }
+        
+        .page-logo-quiz {
+            position: absolute;
+            width: 16vw;
+            height: 7vh;
+            left: 81vw;
+            top: 15.5vh;
+            color: white;
+        }
+        
+        .page-logo-quiz-1 {
+            position: absolute;
+            width: 16vw;
+            height: 7vh;
+            left: 44%;
+            top: 14%;
+            color: white;
+        }
+        
+        #logo1 {
+            background-image: url("images/bloody-mary/IconaPagina1New.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo2 {
+            background-image: url("images/bloody-mary/IconaPagina2New.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo3 {
+            background-image: url("images/bloody-mary/IconaPagina3New.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo4 {
+            background-image: url("images/bloody-mary/IconaPagina4New.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo5 {
+            background-image: url("images/bloody-mary/IconaPagina1New.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        .popup-logo {
+            margin-left: -10%;
+            width: 20vh;
+            height: 20vh;
+        }
+        
+        p {
+            font-size: 250%;
+            color: white;
+        }
+        
+        @media screen and (min-device-width: 763px) {
+            html * {
+                font-size: 1.2em;
+            }
+            div.text {
+                position: absolute;
+                /*width: content-box;*/
+                /*position: center;*/
+                /*align-content: center;*/
+                /*margin: auto;*/
+                width: fit-content;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                margin-top: 17vh;
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+                /*position: center;*/
+                /*left: 50%;*/
+                /*padding-right: 20%;*/
+                /*margin-right: 30%;*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+            }
+            .page-logo {
+                position: absolute;
+                width: 15vh;
+                height: 15vh;
+                left: 50%;
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+            }
+        }
+        /*POPUP*/
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            /*z-index: 1; !* Sit on top *!*/
+            /*padding-top: 100px; !* Location of the box *!*/
+            left: 0;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        
+        .modal-content {
+            height: auto;
+            min-height: 100%;
+            margin: auto;
+            border: 1px solid #888;
+            background-color: white;
+            background-image: url("images/bloody-mary/IphoneXgraficaApprofondimenti.png");
+            background-size: 100% auto;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        .modal-content-quiz {
+            height: auto;
+            min-height: 100%;
+            margin: auto;
+            border: 1px solid #888;
+            background-color: white;
+            background-size: 100% auto;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        .popup-content {
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-top: 8vh;
+            margin-bottom: 10vw;
+        }
+        
+        #page1 {
+            background-image: url("images/bloody-mary/sfondi/IphoneXottobre2019_Pagina1.png"), url("images/bloody-mary/sfondi/valeria/IphoneXPagina1Valeria.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page2 {
+            background-image: url("images/bloody-mary/sfondi/IphoneXottobre2019_Pagina2.png"), url("images/bloody-mary/sfondi/valeria/IphoneXPagina2Valeria.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page3 {
+            background-image: url("images/bloody-mary/sfondi/IphoneXottobre2019_Pagina3.png"), url("images/bloody-mary/sfondi/valeria/IphoneXPagina3Valeria.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page4 {
+            background-image: url("images/bloody-mary/sfondi/IphoneXottobre2019_PaginaFinale.png"), url("images/bloody-mary/sfondi/valeria/IphoneXPagina4Valeria.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page5 {
+            /* background-image: url("images/bloody-mary/sfondo_quiz.jpg"); */
+            /* background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center; */
+            background-color: black;
+        }
+        
+        #specific-head {
+            font-size: 0.99em;
+        }
+        /*photogallery inside modal*/
+        /* The grid: Four equal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            width: 24%;
+            padding: 5px;
+        }
+        /* Style the images inside the grid */
+        
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        
+        .column img:hover {
+            opacity: 1;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* The expanding image container */
+        
+        .container {
+            position: relative;
+            display: block;
+        }
+        /* Expanding image text */
+        
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        /* Closable button inside the expanded image */
+        /*.closebtn {*/
+        /*position: absolute;*/
+        /*top: 10px;*/
+        /*right: 15px;*/
+        /*color: white;*/
+        /*font-size: 35px;*/
+        /*cursor: pointer;*/
+        /*}*/
+        /*img {*/
+        /*image-orientation: from-image;*/
+        /*}*/
+        
+        .videoyoutube {
+            height: 30vh;
+            overflow: hidden;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .videoyoutube iframe,
+        .videoyoutube object,
+        .videoyoutube embed {
+            height: 30vh;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        
+        .monitor {
+            -webkit-transform: rotate(180deg);
+            /* Chrome and other webkit browsers */
+            -moz-transform: rotate(180deg);
+            /* FF */
+            -o-transform: rotate(180deg);
+            /* Opera */
+            -ms-transform: rotate(180deg);
+            /* IE9 */
+            transform: rotate(180deg);
+            /* W3C compliant browsers */
+        }
+        
+        #link {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="posti-section cover" id="cover">
+
+        <!-- <a class="logo" id="logo-cover"></a> -->
+        <a class="collaboration-logo"></a>
+        <!-- <a id="link" style="position: absolute;text-align: center; font-size: 1.5em; padding-left: 3%; padding-top: 3%" href="/?lang=en">EN</a> -->
+        <a class="blockchain-text">traccia in <b>blockchain</b></a>
+        <a class="traccia-text">il <b>Bloody Mary</b> di</a>
+        <a class="bottom-button" data-modal="modal0"></a>
+    </section>
+
+    <section class="posti-section page" id="page1">
+        <!--<a class="bottom-button-page"></a>-->
+        <!-- <a class="page-logo" id="logo1"></a> -->
+        <div class="text">
+            <a class="head-title-text"><b>STORIA</b></a><br>
+            <a class="head-text"> <b>11.10.2019</b></a><br><br><b>Nasce il primo<br>Bloody Mary digitale<br> in blockchain<br></b></div>
+        <a data-modal="quiz"></a>
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page2">
+        <!--<a class="bottom-button-page"></a>-->
+        <!-- <a class="page-logo" id="logo2"></a> -->
+        <div class="text">
+            <a class="head-title-text"> <b>RICETTA</b></a><br>
+            <a class="head-text"><b>7 ingredienti</b></a><br><br><b>L'orto del Resort a Labico<br>è protagonista: dal pomodoro<br>Torpedino al sale di sedano<br></b></div>
+        <!-- <a class="bottom-button" data-modal="modal2"></a> -->
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page3">
+        <!--<a class="bottom-button-page"></a>-->
+        <!-- <a class="page-logo" id="logo3"></a> -->
+        <div class="text">
+            <a class="head-title-text"> <b>PREPARAZIONE</b></a><br>
+            <a class="head-text"> <b>Durata: 12 minuti</b></a><br><br><b>Il segreto? Succo di pomodoro<br>fresco appena filtrato<br>e maestria dello Chef.<br></b></div>
+        <!-- <a class="bottom-button" data-modal="modal3"></a> -->
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page4">
+        <!--<a class="bottom-button-page"></a>-->
+        <!-- <a class="page-logo" id="logo4"></a> -->
+        <div class="text">
+            <a class="head-title-text"> <b>TORPEDINO</b></a><br>
+            <a class="head-text"> <b>Orto dello <br>Chef Colonna</b></a>
+            <br><br>
+            <b>Labico, Valle Fredda <br></b><b>Lat. <a th:text="${lat0}+'°'+${lat1}+'’'+${lat2}+'’’ N'"></a><br>Long. <a th:text="${lon0}+'°'+${lon1}+'’'+${lon2}+'’’ E'"></a></b>
+        </div>
+        <!-- <a class="bottom-button" data-modal="modal3"></a> -->
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section" id="page5">
+        <a class="page-logo-quiz-1" id="logo5"></a>
+        <div style="color: white;
+        text-align: center;
+        position: relative;
+        top: 25%;
+        line-height: 4vh; ">
+            <a><b>Vuoi essere barman per un giorno?</b></a>
+            <br>
+            <a class="quiz-button" data-modal="quiz" style="background-color: grey; left: 20%;width: 60%; height:80px; margin-top: 10%">Clicca Qui!</a>
+        </div>
+    </section>
+
+    <!-- <section class="posti-section" id="page5" onscroll="jump()">
+
+    </section>
+
+    <script>
+        function jump() {
+            window.location = ("" + window.location).replace(/#[A-Za-z0-9_]*$/, '') + "#quiz";
+            alert("ciao");
+        }
+    </script> -->
+
+    <!-- <section class="posti-section" id="quiz">
+        <div class="modal-content">
+            <span class="closeQuiz" data-modal="quiz"></span>
+            <div class="popup-content" style="margin-top: 10vh">
+                <b>Firma il tuo Bloody Mary<br></b> Vuoi creare un nuovo cocktail?
+                <br>
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Inserisci i tuoi dati
+                <input type="text" placeholder="nome e cognome" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="nome_cognome">
+                <br>
+                <input type="text" placeholder="e-mail" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="e_mail">
+                <br>
+                <br>
+                <input type="checkbox" style="width: 25px; height: 25px" value="OK" id="form_privacy" onChange="azione()">
+                <span style="font-size: 0.7em">Ho letto l’informativa Privacy e acconsento al trattamento dei miei dati
+                    personali per le finalità sopra descritte</span>
+                <br>
+                <br><span style="font-size: 1.35em">&#8226;</span> &nbsp; Aggiungi il tuo ingrediente speciale
+                <br>
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px;  margin-top: 20px" value="cetriolo" />&nbsp;&nbsp; Cetriolo <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="aneto" /> &nbsp;&nbsp;Aneto<br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="brodo" /> &nbsp;&nbsp;Brodo di vongole <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="wasabi" /> &nbsp;&nbsp;Wasabi <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="gambero" /> &nbsp;&nbsp;Gambero<br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="pancetta" /> &nbsp;&nbsp;Pancetta croccante <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="basilico" /> &nbsp;&nbsp;Basilico <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="altro" />&nbsp;&nbsp;
+                <input type="text" style="height:40px; width: 35vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " placeholder="altro" id="altro"><br />
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Gioca con noi!
+                <input type="text" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px " placeholder="Il nome del tuo cocktail" id="nome_cocktail">
+                <br>
+                <span style="font-size: 0.7em">La tua nuova ricetta di Bloody Mary sarà tracciata in blockchain*</span>
+                <br>
+                <input value="invia" style="width: 80vw; height:80px; margin-top: 20px" />
+                <br><br>
+                <span style="font-size: 0.5em">*nei prossimi giorni riceverai il certificato digitale della tua
+                    ricetta</span>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Popup itself -->
+    <div id="modal0" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal0"></span>
+            <div class="popup-content" style="padding-top: 17%">
+                <!-- <a class="popup-logo" id="logo-popup1"></a> -->
+                La blockchain è una tecnologia basata su un registro pubblico e distribuito, condiviso da più partecipanti di un network e fondato su una logica peer-to-peer. Il registro è strutturato come una catena di blocchi attraverso cui sono scambiate le transazioni:
+                la validazione è affidata a un meccanismo di consenso che investe tutti i nodi della rete. Le principali caratteristiche della tecnologia blockchain sono l’immutabilità del registro, la tracciabilità delle transazioni e la sicurezza basata
+                su tecniche crittografiche.
+                <br><br> Questo progetto è realizzato sulla piattaforma Blockchain Bitcoin .
+                <br>
+                <a href="http://blockchain.posti.world:3309">Verifica le informazioni su blockchain</a>
+                <br><br> Promotori
+                <br>
+                <div style="font-size: 0.8em"><a href="http://posti.world">pOsti</a> e
+                    <a href="https://antonellocolonna.it">Chef Antonello Colonna</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz" class="modal">
+        <div class="modal-content-quiz">
+            <span class="closeQuiz" data-modal="quiz"></span>
+            <div class="popup-content" style="margin-top: 10vh">
+                <b>Firma il tuo Bloody Mary<br></b>
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Inserisci i tuoi dati
+                <br>
+                <input type="text" onclick="javascript:bgWhiteNomeCognome()" placeholder="nome e cognome" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="nome_cognome">
+                <br>
+                <input type="text" onclick="javascript:bgWhiteMail()" placeholder="e-mail" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="e_mail">
+                <br>
+                <br>
+                <input type="checkbox" style="width: 25px; height: 25px" value="OK" id="form_privacy" onclick="javascript:bgWhitePrivacy()">
+                <!-- class="iubenda-white iubenda-embed" -->
+                <span id="form_privacy_text" style="font-size: 0.7em">Ho letto l’informativa <a href="https://www.iubenda.com/privacy-policy/11564993" style="font-size: 1.0em" title="Privacy Policy ">privacy</a> e acconsento al trattamento dei miei dati   
+                    personali per le finalità sopra descritte</span>
+                <br>
+                <br><span style="font-size: 1.35em">&#8226;</span> &nbsp; <span id="ingredienti_text" style="font-size: 1.0em">Crea il tuo cocktail aggiungendo un ingrediente speciale</span>
+                <br>
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px;  margin-top: 20px" id="cetriolo" />&nbsp;&nbsp; Cetriolo <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="aneto" /> &nbsp;&nbsp;Aneto<br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="brodo" /> &nbsp;&nbsp;Brodo di vongole <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="wasabi" /> &nbsp;&nbsp;Wasabi <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="gambero" /> &nbsp;&nbsp;Gambero<br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="pancetta" /> &nbsp;&nbsp;Pancetta croccante <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="basilico" /> &nbsp;&nbsp;Basilico <br />
+                <!-- <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" name="ingredienti[]"/>&nbsp;&nbsp; -->
+                <input onclick="javascript:bgWhiteIngredienti()" id="altro" type="text" style="margin-left: 10vw;height:40px; width: 50vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " placeholder="altro"><br
+                />
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Dai un nome al tuo cocktail e condividi la foto sui social con l’hashtag #bloodymarydigitale <br><br> <input onclick="javascript:bgWhiteNomeCocktail()" type="text" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px "
+                    placeholder="Il nome del tuo cocktail" id="nome_cocktail">
+                <br><br> Il miglior Mixologist del giorno riceverà un fantastico premio!
+                <br><br>
+                <span style="font-size: 0.75em"><b>La tua nuova ricetta di Bloody Mary sarà tracciata in blockchain</b></span>
+                <br>
+                <input type="submit" onclick="javascript:userActionPOST()" value="invia" style="width: 80vw; height:80px; margin-top: 20px;font-size : 50px">
+                <br>
+                <!-- <input type="submit" onclick="javascript:userActionGET()" value="leggi" style="width: 80vw; height:80px; margin-top: 20px;font-size : 50px"> -->
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal2"></span>
+
+            <a class="popup-logo" id="logo-popup2"></a>
+            <div class="popup-content">
+
+                <img src="img/v5/test/v1/invio/territorio nero.png" class="popup-logo"><br>
+                <b>TERRITORIO</b><br> Racchiusa fra la tonalite dell’Adamello Presanella e le calcaree Dolomiti di Brenta, la Val Rendena si estende dal paesino di Verdesina fino ai 1.650 m. di Madonna di Campiglio/Campo Carlo Magno. È ricca di acque,
+                di boschi e di pascoli: un perfetto ecosistema dove anche la fauna vanta diversi esemplari. Le sue bellezze sono protette dal Parco Naturale Adamello Brenta. I suoi caratteristici borghi, ricchi di storia e tradizioni, sono espressione
+                di una cultura alpina.<br><br> La temperatura media settimanale degli ultimi 7 giorni (<a style="font-size: 1em" th:text="${aweek}+'-'+${today}">22-28</a>) è di <a style="font-size: 1em" th:text="${tempM}">18</a>°
+
+                <br><br> Foto rilevata dalla stazione di monitoraggio il: <time th:text="${time}" style="font-size: 1em"></time><br>
+                <br>
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img class="monitor" id="stazione" th:src="'http://myxfarm.com/xsense/89462038005001835702/'+${pname}" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+                <br>
+
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg2" src="images/rendena/Az.Rendena_Territorio_1.jpg" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_1.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_2.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_3.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal3"></span>
+            <a class="popup-logo" id="logo-popup3"></a>
+            <div class="popup-content">
+                <img src="img/v5/test/v1/invio/malga nera.png" class="popup-logo"><br>
+                <b>MALGA</b><br> La Malga Bandalors è sul versante del Doss del Sabion di Giustino. È anche nota come ‘Bregn de l’Ors’: in dialetto locale significa “abbeveratoio dell’orso”, perché sembra che in passato gli orsi fossero soliti dissetarsi
+                al “bregn” di legno. Qui, da giugno a settembre, le mucche fanno alpeggio. C’è una stalla e un’antica casera: il malgaro si prende cura di 107 mucche. Le mucche trascorrono l’intera giornata al pascolo. La notte a volte rientrano in stalla,
+                a volte scelgono di riposare intorno alla malga, sotto le stelle...
+                <br><br>
+
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg3" src="images/rendena/Az.Rendena_Malga_1_vista Bandalors.jpeg" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+
+
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Malga_1_vista Bandalors.jpeg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Malga_2_abbeveratoio.jpg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                &lt;!&ndash;<div class="column">&ndash;&gt;
+                &lt;!&ndash;<img src="" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">&ndash;&gt;
+                &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;<div class="column">&ndash;&gt;
+                &lt;!&ndash;<img src="images/rendena/Az.Rendena_Malga_2_abbeveratoio.jpeg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">&ndash;&gt;
+                &lt;!&ndash;</div>&ndash;&gt;
+                </div>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal4"></span>
+            <div class="popup-content">
+
+                <a class="popup-logo" id="logo-popup4"></a>
+                <img src="img/v5/test/v1/invio/pascolo nero.png" class="popup-logo"><br>
+                <b>PASCOLO</b><br> Ogni giorno la nostra mucca percorre i pendii del Doss del Sabion salendo verso la località Madonnina, per poi ridiscendere a sera verso i prati circostanti la Malga Bandalors. È in moto continuo, perché è una mucca
+                curiosa e super attiva. Beve acqua pura e si nutre dei fiori e dell’erba fresca del pascolo in quota: gli ‘slavazuoi’ (spinaci selvatici) e il timo di montagna sono il suo pasto preferito. Il suo latte, grazie a questa alimentazione, è
+                gustoso e nutriente, ricco di beta carotene.
+
+                <br><br>
+
+                <div class="videoyoutube">
+                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/CEx40HKWtOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg4" src="images/rendena/Az. Rendena_Pascolo_1.JPG" alt="Nature" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+
+
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az. Rendena_Pascolo_1.JPG" alt="expandedImg4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az. Rendena_Pascolo_2.JPG" alt="expandedImg4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal5"></span>
+            <a class="popup-logo" id="logo-popup5"></a>
+            <div class="popup-content">
+
+                <img src="img/v5/test/v1/invio/produzione nero.png" class="popup-logo"><br>
+
+                <b>FORMAGGIO</b><br> Per la produzione di una forma da 4,5 kg ci sono voluti 45 litri di latte. Latte, caglio, sale... e la mano del casaro: sono questi il segreto di un buon formaggio di malga. Riflette nei suoi aromi il gusto delle erbe
+                di cui la mucca Rendena si è nutrita. Sul suo profumo e sapore incide anche il tempo di stagionatura:
+                <br> 5 mesi alla temperatura media di 10,5°.
+                <br><br>
+                <a style="font-size: 0.8em"><b>Azienda Agricola<br>
+                        Fattoria Antica Rendena</b> </a><br><br>
+                <a href="http://www.fattoria-rendena.it" style="font-size: 0.8em">www.fattoria-rendena.it</a>
+            </div>
+        </div>
+    </div> -->
+
+    <script>
+        // Get the modal
+        // var modal = document.getElementsByClassName("modal");
+        // alert(modal);
+        // Get the button that opens the modal
+
+        var btn = document.getElementsByClassName("bottom-button");
+        var targetElement0 = document.querySelector("#modal0");
+        var targetElement1 = document.querySelector("#modal1");
+        var targetElement2 = document.querySelector("#modal2");
+        var targetElement3 = document.querySelector("#modal3");
+        var targetElement4 = document.querySelector("#modal4");
+        var targetElement5 = document.querySelector("#modal5");
+
+        // alert(btn);
+        // Get the <span> element that closes the modal
+        // var span = document.getElementsByClassName("close")[0];
+        // alert(span);
+        // When the user clicks the button, open the modal
+
+        for (var i = 0; i < btn.length; i++) {
+            var currentBtn = btn[i];
+            currentBtn.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "block";
+                bodyScrollLock.disableBodyScroll(targetElement0);
+                bodyScrollLock.disableBodyScroll(targetElement1);
+                bodyScrollLock.disableBodyScroll(targetElement2);
+                bodyScrollLock.disableBodyScroll(targetElement3);
+                bodyScrollLock.disableBodyScroll(targetElement4);
+                bodyScrollLock.disableBodyScroll(targetElement5);
+
+                $.scrollify.disable();
+
+            }, false);
+
+            var span = document.getElementsByClassName("close")[i];
+            span.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "none";
+                // bodyScrollLock.enableBodyScroll(targetElement);
+                // bodyScrollLock.clearAllBodyScrollLocks();
+                $.scrollify.enable();
+            })
+        }
+
+        //Pulsante quiz
+        var btnQuiz = document.getElementsByClassName("quiz-button");
+        var targetElementQuiz = document.querySelector("#quiz");
+        for (var i = 0; i < btnQuiz.length; i++) {
+            var currentBtn = btnQuiz[i];
+            currentBtn.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "block";
+                bodyScrollLock.disableBodyScroll(targetElementQuiz);
+                $.scrollify.disable();
+            }, false);
+
+            var span = document.getElementsByClassName("closeQuiz")[i];
+            span.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "none";
+                // bodyScrollLock.enableBodyScroll(targetElement);
+                // bodyScrollLock.clearAllBodyScrollLocks();
+                $.scrollify.enable();
+            })
+        }
+
+        function myFunction(imgs) {
+            var expandImg = document.getElementById(imgs.alt);
+            // var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            // imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        //     $.scrollify.disable();
+        // };
+
+        // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+        // };
+
+        // span = document.getElementsByClassName("close")[1];
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+
+        // };
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target === modal) {
+        //         modal.style.display = "none";
+        //         $.scrollify.enable()
+        //     }
+        // };
+
+        //COMINICAZIONE VERSO DB
+        const userActionGET = async() => {
+            const response = await fetch('http://80.211.104.174:5000/api/QuizPosti/');
+            const myJson = await response.json(); //extract JSON from the http response
+            // do something with myJson
+            console.log(myJson);
+        }
+
+        const userActionPOST = async() => {
+
+            var nome_cognome = document.getElementById("nome_cognome").value;
+            var e_mail = document.getElementById("e_mail").value;
+
+            var form_privacy = document.getElementById("form_privacy").checked;
+
+            var cetriolo = document.getElementById("cetriolo").checked;
+            var aneto = document.getElementById("aneto").checked;
+            var brodo = document.getElementById("brodo").checked;
+            var wasabi = document.getElementById("wasabi").checked;
+            var gambero = document.getElementById("gambero").checked;
+            var pancetta = document.getElementById("pancetta").checked;
+            var basilico = document.getElementById("basilico").checked;
+            var altro = document.getElementById("altro").value;
+            console.log(altro);
+            altro = altro.replace(/'/g, "&#39;");
+            // 
+            console.log(altro);
+
+            var nome_cocktail = document.getElementById("nome_cocktail").value;
+
+            var bodyStr = "";
+
+            if (form_privacy & nome_cognome != "" & e_mail != "" & nome_cocktail != "") {
+
+                bodyStr = "{'nome': '" + nome_cognome + "', " +
+                    "'cognome': 'POSTI', " +
+                    "'mail': '" + e_mail + "', " +
+                    "'cetriolo': " + cetriolo + ", " +
+                    "'aneto': " + aneto + ", " +
+                    "'brodo': " + brodo + ", " +
+                    "'wasabi': " + wasabi + ", " +
+                    "'gambero': " + gambero + ", " +
+                    "'pancetta': " + pancetta + ", " +
+                    "'basilico': " + basilico + ", " +
+                    "'altro': '" + altro + "', " +
+                    "'nome_cocktail': '" + nome_cocktail + "' " +
+                    "}";
+
+                // body: "{'nome_cognome': '" + nome_cognome + "', " +
+                //     "'mail': '" + e_mail + "', " +
+                //     "'cetriolo': " + cetriolo + ", " +
+                //     "'aneto': " + aneto + ", " +
+                //     "'brodo': " + brodo + ", " +
+                //     "'wasabi': " + wasabi + ", " +
+                //     "'gambero': " + gambero + ", " +
+                //     "'pancetta': " + pancetta + ", " +
+                //     "'basilico': " + basilico + ", " +
+                //      "'altro': '" + altro + "'', " +
+                //     "'nome_cocktail': " + nome_cocktail + ", " +
+                //     "}";     
+
+                // bodyStr = "{" +
+                //     "'nome': 'VINCENZO'," +
+                //     "'cognome': 'MOLITIENO'," +
+                //     "'mail': 'vincenzo@mail.com'," +
+                //     "'cetriolo': true," +
+                //     "'aneto': false," +
+                //     "'brodo': false," +
+                //     "'wasabi': false," +
+                //     "'gambero': true," +
+                //     "'pancetta': true," +
+                //     "'basilico': false," +
+                //     "'altro': 'ALTRO'," +
+                //     "'nome_cocktail': 'versione 2'" +
+                //     "}";
+
+                console.log(bodyStr);
+                const response = await fetch('http://80.211.104.174:5000/api/QuizPosti/', {
+                    method: 'POST',
+                    body: bodyStr,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'fuelmatic'
+                    }
+                });
+
+                alert("Grazie!! Hai creato il tuo cocktail\n\n" +
+                    "Nei prossimi giorni riceverai il certificato digitale della tua ricetta");
+
+                resertForm();
+
+            } else {
+                alert("Compilare i canmpi obbligatori!!");
+
+                if (!(cetriolo || aneto || brodo || wasabi || gambero || pancetta || basilico || (altro != ""))) document.getElementById("ingredienti_text").style.backgroundColor = "red";
+
+                if (!form_privacy) document.getElementById("form_privacy_text").style.backgroundColor = "red";
+
+                if (nome_cognome == "") document.getElementById("nome_cognome").style.backgroundColor = "red";
+
+                if (e_mail == "") document.getElementById("e_mail").style.backgroundColor = "red";
+
+                if (nome_cocktail == "") document.getElementById("nome_cocktail").style.backgroundColor = "red";
+
+            }
+
+        }
+
+
+        function bgWhitePrivacy() {
+            document.getElementById("form_privacy_text").style.backgroundColor = "white";
+        }
+
+        function bgWhiteNomeCognome() {
+            document.getElementById("nome_cognome").style.backgroundColor = "white";
+        }
+
+        function bgWhiteMail() {
+            document.getElementById("e_mail").style.backgroundColor = "white";
+        }
+
+        function bgWhiteNomeCocktail() {
+            document.getElementById("nome_cocktail").style.backgroundColor = "white";
+        }
+
+        function bgWhiteIngredienti() {
+            if ((cetriolo || aneto || brodo || wasabi || gambero || pancetta || basilico || (altro != ""))) document.getElementById("ingredienti_text").style.backgroundColor = "white";
+        }
+
+        function resertForm() {
+
+            document.getElementById("nome_cognome").value = "";
+            document.getElementById("e_mail").value = "";
+
+            document.getElementById("form_privacy").checked = false;
+
+            document.getElementById("cetriolo").checked = false;
+            document.getElementById("aneto").checked = false;
+            document.getElementById("brodo").checked = false;
+            document.getElementById("wasabi").checked = false;
+            document.getElementById("gambero").checked = false;
+            document.getElementById("pancetta").checked = false;
+            document.getElementById("basilico").checked = false;
+            document.getElementById("altro").value = "";
+
+            document.getElementById("nome_cocktail").value = "";
+        }
+    </script>
+
+    <script type="text/javascript">
+        (function(w, d) {
+            var loader = function() {
+                var s = d.createElement("script"),
+                    tag = d.getElementsByTagName("script")[0];
+                s.src = "https://cdn.iubenda.com/iubenda.js";
+                tag.parentNode.insertBefore(s, tag);
+            };
+            if (w.addEventListener) {
+                w.addEventListener("load", loader, false);
+            } else if (w.attachEvent) {
+                w.attachEvent("onload", loader);
+            } else {
+                w.onload = loader;
+            }
+        })(window, document);
+    </script>
+
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+</body>
+
+</html>

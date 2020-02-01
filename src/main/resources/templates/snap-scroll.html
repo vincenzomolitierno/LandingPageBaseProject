@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Snap Scroll</title>
+
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+		<style>
+			* {
+				margin:0;
+				padding:0;
+				border:0;
+			}
+
+			/*header {*/
+				/*height:120px;*/
+				/*background-color:#F00;*/
+			/*}*/
+
+			section {
+				height:100vh;
+				background-image: url("img/bg-masthead1.jpg");
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: auto 100%;
+				position: relative;
+			}
+
+			.posti-button{
+				position: absolute;
+				margin-top: 20%;
+			}
+			
+			img{
+				position: center;
+			}
+
+			/*section:nth-child(1){*/
+				/*!*background-color:#0F0;*!*/
+			/*}*/
+			/*section:nth-child(2){*/
+				/*!*background-color:#FF0;*!*/
+			/*}*/
+			/*section:nth-child(3){*/
+				/*!*background-color:#0FF;*!*/
+			/*}*/
+
+			/*footer {*/
+				/*height:320px;*/
+				/*background-color:#00F;*/
+			/*}*/
+
+			span {
+				display:inline-block;
+				font-size:2em;
+				margin:32px;
+				opacity:0;
+				transition:all 0.5s;
+				transition-delay:0.2s;
+			}
+			.snap-scroll-visible span {
+				margin-top:16px;
+				opacity:1;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<header><span>HEADER</span></header>-->
+		<div>
+			<section id="section1">
+				<span>Section 1</span>
+				<!--th:href="@{~/#section2}"-->
+				<a class="posti-button js-scroll-trigger" href="#section2"><img th:src="@{~/img/button-black.png}"  alt="button"></a>
+			</section>
+			<section id="section2"><span>Section 2</span>
+				<a class="posti-button js-scroll-trigger" href="#section3"><img th:src="@{~/img/button-black.png}" styl alt="button"></a>
+			</section>
+
+			<section id="section3"><span>Section 3</span>
+				<a class="posti-button js-scroll-trigger" href="#section1"><img th:src="@{~/img/button-black.png}" alt="button"></a>
+			</section>
+		</div>
+		<!--<footer><span>FOOTER</span></footer>-->
+
+		<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+		<script th:src="@{js/snap-scroll.js}"></script>
+		<script th:src="@{js/creative.js}"></script>
+		<script>
+			var snapScroll = $("header, section, footer").SnapScroll({
+				hashes:true
+			});
+			console.log(snapScroll);
+
+			//Listen for active element change
+			//You could listen globally like $(document)
+			$(document).on(snapScroll.eventChangeActive, function(evt, newActive){
+				console.log(evt, newActive);
+			});
+
+			//Listen for visible element change
+			//You could listen on a specific element like $("header")
+			$(document).on(snapScroll.eventChangeVisible, function(evt, visibleList){
+				console.log(evt, visibleList.data);
+			});
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="js/test2.js"></script>
+	</body>
+</html>

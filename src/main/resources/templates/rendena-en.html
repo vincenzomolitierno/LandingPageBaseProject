@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no" />-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/bodyScrollLock.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        html * {
+            font-size: 1.3em;
+            /*color: #000 !important;*/
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        
+        .head-title-text {
+            font-size: 1.7em;
+        }
+        
+        .head-text {
+            font-size: 1.31em;
+        }
+        
+        .popup-content img {
+            max-width: 100%;
+        }
+        
+        div.text {
+            position: absolute;
+            /*width: content-box;*/
+            /*position: center;*/
+            /*align-content: center;*/
+            /*margin: auto;*/
+            width: fit-content;
+            /*width: 70%;*/
+            left: 50%;
+            /*right: 0;*/
+            padding-left: 2vw;
+            margin-top: 17vh;
+            margin-left: -25%;
+            margin-right: auto;
+            color: white;
+            /*position: center;*/
+            /*left: 50%;*/
+            /*padding-right: 20%;*/
+            /*margin-right: 30%;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+        }
+        
+        .modal-content {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media screen and (min-device-width: 763px) {
+            html * {
+                font-size: 1.2em;
+            }
+            div.text {
+                position: absolute;
+                /*width: content-box;*/
+                /*position: center;*/
+                /*align-content: center;*/
+                /*margin: auto;*/
+                width: fit-content;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                margin-top: 17vh;
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+                /*position: center;*/
+                /*left: 50%;*/
+                /*padding-right: 20%;*/
+                /*margin-right: 30%;*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+            }
+            .page-logo {
+                position: absolute;
+                width: 15vh;
+                height: 15vh;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                /*margin-top: 2vh;*/
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+            }
+        }
+        
+        .page {
+            /*background-image: url("img/v5/lines-button-2.png");*/
+            /*background-image: url("img/v5/cover-lines-logo-button.png");*/
+            background-image: url("img/v5/test/v1/page.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: top center;
+            /*background-size: 95vw 100vh;*/
+            /*background-size: 57vw 100vh;*/
+            /*background-color: #0b0b0b;*/
+            /*background-position-x: 32%;*/
+        }
+        
+        .last {
+            background-image: url("static/img/v5/test/v1/invio/IphoneX ultima pagina landing.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: top center;
+        }
+        
+        .cover {
+            /*background-image: url("img/v5/test/v1/cover.png"), url("img/test/Copertina/black.jpg");*/
+            /*-webkit-background-size: auto 100%, auto 50%;*/
+            /*background-size: auto 100%, auto 50%;*/
+            background-image: url("img/v5/test/v1/cover.png"), url("img/v5/test/v1/low/IphoneX sfondi low.jpg");
+            -webkit-background-size: auto 100%, auto 100%;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            background-color: white;
+            /*background-size: 95vw 100vh;*/
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        .posti-section {
+            /*background-image: url("img/optimized/landing-vino200h.png");*/
+            background-repeat: no-repeat;
+            /*background-position: center center;*/
+            /*background-size: auto 100%;*/
+            /*height: 100vh;*/
+            /*min-height:100%;*/
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            /*text-align: center;*/
+            align-content: center;
+        }
+        
+        .bottom-button {
+            /*background-image: url("img/test/cover-button.png");*/
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 10vh;
+            width: 30vw;
+            /*top: 80vh;*/
+            /*position: absolute;*/
+            position: absolute;
+            left: 50%;
+            margin-left: 5%;
+            bottom: 5vh;
+            /*keep element on center*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            display: block;
+            /*vertical-align: bottom;*/
+            /*top: 60%;*/
+            /*bottom: 1%;*/
+            /*left: 45%;*/
+        }
+        
+        .close {
+            height: 10vh;
+            width: 15vw;
+            position: absolute;
+        }
+        
+        .blockchain-text {
+            color: white;
+            position: absolute;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*left: 50%;*/
+            /*margin-left: -20%;*/
+            width: 100%;
+            text-align: center;
+            top: 37%;
+            /*font-size: 1.4em;*/
+        }
+        
+        .traccia-text {
+            color: black;
+            position: absolute;
+            /*left: auto;*/
+            /*right: auto;*/
+            /*text-align: center;*/
+            /*padding-right: auto;*/
+            /*padding-left: auto;*/
+            /*right: 50%;*/
+            /*padding-top: 53%;*/
+            width: 100%;
+            text-align: center;
+            top: 53%;
+            /*font-size: 1.1em;*/
+        }
+        
+        .collaboration-logo {
+            position: absolute;
+            background-image: url("img/v5/test/v1/invio/Logo copertina+testo.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            /*width: 80vw;*/
+            /*height: 20vh;*/
+            width: 66%;
+            height: 30%;
+            left: 50%;
+            margin-left: -30%;
+            margin-top: -25%;
+            top: 75%;
+            display: block;
+        }
+        
+        .page-logo {
+            position: absolute;
+            width: 15vh;
+            height: 15vh;
+            /*width: 70%;*/
+            left: 50%;
+            /*right: 0;*/
+            /*padding-left: 2vw;*/
+            /*margin-top: 2vh;*/
+            margin-left: -30%;
+            margin-right: auto;
+            color: white;
+        }
+        
+        #logo1 {
+            background-image: url("img/v5/test/v1/invio/mucca bianca.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo2 {
+            background-image: url("img/v5/test/v1/invio/territorio.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo3 {
+            background-image: url("img/v5/test/v1/invio/malga bianco.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo4 {
+            background-image: url("img/v5/test/v1/invio/pascolo bianco.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo5 {
+            background-image: url("img/v5/test/v1/invio/produzione.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        .popup-logo {
+            margin-left: -10%;
+            width: 20vh;
+            height: 20vh;
+        }
+        
+        p {
+            font-size: 250%;
+            color: white;
+        }
+        
+        @media screen and (min-device-width: 763px) {
+            html * {
+                font-size: 1.2em;
+            }
+            div.text {
+                position: absolute;
+                /*width: content-box;*/
+                /*position: center;*/
+                /*align-content: center;*/
+                /*margin: auto;*/
+                width: fit-content;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                margin-top: 17vh;
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+                /*position: center;*/
+                /*left: 50%;*/
+                /*padding-right: 20%;*/
+                /*margin-right: 30%;*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+            }
+            .page-logo {
+                position: absolute;
+                width: 15vh;
+                height: 15vh;
+                /*width: 70%;*/
+                left: 50%;
+                /*right: 0;*/
+                /*padding-left: 2vw;*/
+                /*margin-top: 2vh;*/
+                margin-left: -10%;
+                margin-right: auto;
+                color: white;
+            }
+        }
+        /*POPUP*/
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            /*z-index: 1; !* Sit on top *!*/
+            /*padding-top: 100px; !* Location of the box *!*/
+            left: 0;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        
+        .modal-content {
+            height: auto;
+            min-height: 100%;
+            /*background-color: #fefefe;*/
+            margin: auto;
+            /*padding: 20px;*/
+            border: 1px solid #888;
+            /*width: 80%;*/
+            /*background-color: #007bff;*/
+            background-color: white;
+            background-image: url("img/v5/test/v1/invio/IphoneX grafica approfondimenti1.png");
+            background-size: 100% auto;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        .popup-content {
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-top: 8vh;
+            margin-bottom: 10vw;
+        }
+        
+        #page1 {
+            background-image: url("img/v5/test/v1/invio/IphoneX tratteggio bianco-1.png"), url("img/v5/test/v1/low/IphoneX sfondi low2.jpg");
+            /*background-image:  url("img/v5/test/v1/page.png"), url("img/v5/test/v1/invio/IphoneX sfondi.jpg");*/
+            /*background-image: ;*/
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            /*background-image: url("img/v5/test/v1/1.png");*/
+        }
+        
+        #page2 {
+            background-image: url("img/v5/test/v1/invio/IphoneX tratteggio bianco-1.png"), url("img/v5/test/v1/low/IphoneX sfondi low3.jpg");
+            /*background-image: ;*/
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            /*background-image: url("img/v5/test/v1/1.png");*/
+        }
+        
+        #page3 {
+            background-image: url("img/v5/test/v1/invio/IphoneX tratteggio bianco-1.png"), url("img/v5/test/v1/low/IphoneX sfondi low4.jpg");
+            /*background-image: url("img/v5/test/v1/page.png"), url("img/v5/test/v1/low/IphoneX sfondi low4.jpg");*/
+            /*background-image: ;*/
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            /*background-image: url("img/v5/test/v1/1.png");*/
+        }
+        
+        #page4 {
+            background-image: url("img/v5/test/v1/invio/IphoneX tratteggio bianco-1.png"), url("img/v5/test/v1/low/IphoneX sfondi low5.jpg");
+            /*background-image: ;*/
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            /*background-image: url("img/v5/test/v1/1.png");*/
+        }
+        
+        #page5 {
+            /*background-image: url("img/v5/test/v1/invio/IphoneX ultima pagina landing.png"), url("img/v5/test/v1/low/IphoneX sfondi low6.jpg");*/
+            background-image: url("img/v5/test/v1/invio/IphoneX tratteggio bianco2-2.png"), url("img/v5/test/v1/low/IphoneX sfondi low6.jpg");
+            /*background-image: ;*/
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            /*background-image: url("img/v5/test/v1/1.png");*/
+        }
+        
+        #specific-head {
+            font-size: 0.99em;
+        }
+        /*photogallery inside modal*/
+        /* The grid: Four equal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            width: 24%;
+            padding: 5px;
+        }
+        /* Style the images inside the grid */
+        
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        
+        .column img:hover {
+            opacity: 1;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* The expanding image container */
+        
+        .container {
+            position: relative;
+            display: block;
+        }
+        /* Expanding image text */
+        
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        /* Closable button inside the expanded image */
+        /*.closebtn {*/
+        /*position: absolute;*/
+        /*top: 10px;*/
+        /*right: 15px;*/
+        /*color: white;*/
+        /*font-size: 35px;*/
+        /*cursor: pointer;*/
+        /*}*/
+        /*img {*/
+        /*image-orientation: from-image;*/
+        /*}*/
+        
+        .videoyoutube {
+            height: 30vh;
+            overflow: hidden;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .videoyoutube iframe,
+        .videoyoutube object,
+        .videoyoutube embed {
+            height: 30vh;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        
+        .monitor {
+            -webkit-transform: rotate(180deg);
+            /* Chrome and other webkit browsers */
+            -moz-transform: rotate(180deg);
+            /* FF */
+            -o-transform: rotate(180deg);
+            /* Opera */
+            -ms-transform: rotate(180deg);
+            /* IE9 */
+            transform: rotate(180deg);
+            /* W3C compliant browsers */
+        }
+        
+        #link {
+            color: white;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <section class="posti-section cover">
+        <a id="link" style="position: absolute;text-align: center; font-size: 1.5em; padding-left: 3%; padding-top: 3%" href="/?lang=it">IT</a>
+
+        <!--<a class="logo" id="logo-cover"></a>-->
+        <a class="collaboration-logo"></a>
+        <a class="blockchain-text">trace in <b>blockchain</b></a>
+        <a class="traccia-text"><b>Fior di Rendena cheese</b></a>
+        <a class="bottom-button" data-modal="modal0"></a>
+    </section>
+
+    <section class="posti-section page" id="page1">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="page-logo" id="logo1"></a>
+        <div class="text">
+            <a class="head-title-text"> <b>COWS</b></a><br>
+            <a class="head-text"> <b>The Rendena breed</b></a><br><br>
+            <b>The ‘authentic’ cow<br>
+        of the Val Rendena,<br>
+        a symbol of its rural identity.</b></div>
+
+        <a class="bottom-button" data-modal="modal1"></a>
+
+    </section>
+
+    <section class="posti-section page" id="page2">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="link" style="position: absolute;text-align: center; font-size: 1.5em; padding-left: 1%; padding-top: 1%" href="/?lang=it">IT</a>
+        <a class="page-logo" id="logo2"></a>
+
+        <div class="text">
+            <a class="head-title-text"> <b>REGION</b></a><br>
+            <a class="head-text" id="specific-head">
+                <b>Madonna di Campiglio<br>
+            Pinzolo Val Rendena (Trentino)
+            </b></a>
+            <br><br>
+
+            <b>Lat. <a th:text="${lat0}+'°'+${lat1}+'’'+${lat2}+'’’ N'">46°09’35 N</a><br>
+            Long. <a th:text="${lon0}+'°'+${lon1}+'’'+${lon2}+'’’ E'">10°45’49’’ E</a> </b></div>
+
+        <a class="bottom-button" data-modal="modal2"></a>
+
+    </section>
+
+    <section class="posti-section page" id="page3">
+        <a class="page-logo" id="logo3"></a>
+
+        <div class="text">
+            <a class="head-title-text"><b>DAIRY<br></b> </a>
+            <a class="head-text">
+                <b>Malga Bandalors<br>
+                Altitude: 1670 metres </b></a><br>
+            <br>
+            <b>Week <a style="font-size: 1em" th:text="${weeksPassed}">8</a> of Giovanni's<br>
+            summer season at the dairy.</b>
+
+        </div>
+
+        <a class="bottom-button" data-modal="modal3"></a>
+
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page4">
+        <a class="page-logo" id="logo4"></a>
+        <div class="text">
+            <a class="head-title-text">
+                <b>PASTURE</b><br></a>
+            <a class="head-text>"> <b>Doss del Sabion<br>
+                </b></a>
+            <br><br>
+            <b>During the week<br> of <a style="font-size: 1em" th:text="${aweek}+'-'+${today}">22-28</a> the cows<br>
+            travelled 15 KM</b>
+
+        </div>
+
+        <a class="bottom-button" data-modal="modal4"></a>
+
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+    <section class="posti-section page" id="page5">
+        <a class="page-logo" id="logo5"></a>
+
+        <div class="text">
+            <a class="head-title-text"> <b>CHEESE<br></b></a>
+            <a class="head-text" style="font-size: 1em"><b>Fior di Rendena<br>
+                Date of production: 04.02.2019</b><br>
+            </a>
+            <br>
+            <b>It is an aged, organic<br>
+            and local style of cheese.</b>
+
+        </div>
+
+        <a class="bottom-button" data-modal="modal5"></a>
+        <!--<a class="bottom-button-page"></a>-->
+    </section>
+
+
+
+    <!-- Popup itself -->
+    <div id="modal0" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal0"></span>
+            <div class="popup-content" style="padding-top: 17%">
+                <!--<a class="popup-logo" id="logo-popup1"></a>-->
+
+                Blockchain is a technology based on a public, distributed registry, shared by multiple participants on a network and built on peer-to-peer logic. The registry is structured as a blockchain through which transactions are exchanged: they are validated by
+                an approval mechanism that involves all of the nodes on the network. The main features of the blockchain technology are the registry which cannot be changed, the traceability of transactions and the encryption technology which provides
+                security.
+
+                <br><br> This project has been realised using the Bitcoin Blockchain platform.
+                <br>
+                <a href="http://fattoriaanticarendena.posti.world:3307/fd9742a7-a416-49b9-8a42-c98b8326e044">Check the blockchain data</a>
+                <br><br> Promoters
+                <br>
+                <div style="font-size: 0.8em"><a href="http://posti.world">pOsti</a> and the <a href="https://www.campigliodolomiti.it/it">Mandonna di Campiglio Pinzolo Val Rendena Tourism Board</a></div>
+
+
+
+            </div>
+            <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        </div>
+    </div>
+
+
+
+
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal1"></span>
+            <div class="popup-content">
+                <!--<a class="popup-logo" id="logo-popup1"></a>-->
+                <img src="img/v5/test/v1/invio/mucca nero.png" class="popup-logo"><br>
+                <b>COWS</b><br> Rustic, independent and resilient, they have Slow Food status. The Rendena cow represents the history and tradition of this region. The first examples of the Rendena breed were introduced to the valley from Switzerland
+                in 1700. With its dark coat and large, bright eyes, it is a dual-purpose cow (milk and meat). It is very well-suited to the summer pastures: trampling the soil and climbing steep slopes, it helps us to protect the land. The breed even
+                has its own beauty contest, the “Giovenche di razza Rendena sfilata ... e dintorni” parade for Rendena heifers which is held in Pinzolo at the end of August to elect the best in show.
+
+                <br><br>
+
+                <div class="videoyoutube">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1562941726312!6m8!1m7!1sCAoSLEFGMVFpcE4xdGt2ZUNqN1JiTWYzMERpREtSdFp4clNyc1Nta3RJQnhaUWJh!2m2!1d46.23158471379478!2d10.84717975738013!3f164.37!4f-17.450000000000003!5f0.7820865974627469" width="auto"
+                        height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+                <div class="container">
+                    <!--<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>-->
+                    <img id="expandedImg1" src="images/rendena/IMG_6944.jpg" alt="Nature" style="width:100%">
+                    <!--<div id="imgtext"></div>-->
+                </div>
+
+                <!-- The four columns -->
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/IMG_6944.jpg" alt="expandedImg1" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/IMG_7091.jpg" alt="expandedImg1" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <!--<div class="column">-->
+                    <!--<img src="images/rendena/IMG_6900.jpg" alt="expandedImg1" style="width:100%" onclick="myFunction(this);">-->
+                    <!--</div>-->
+                    <!--<div class="column">-->
+                    <!--<img src="images/maso-pan/caseificio_malga_montagnoli,984.jpg" alt="Caseificio 984" style="width:100%" onclick="myFunction(this);">-->
+                    <!--</div>-->
+
+                    <!--<div class="column">-->
+                    <!--<img src="images/maso-pan/caseificio_malga_montagnoli,980.jpg" alt="Caseificio 980" style="width:100%" onclick="myFunction(this);">-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+
+        </div>
+        <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        <!--<iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+    </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal2"></span>
+
+            <!--<a class="popup-logo" id="logo-popup2"></a>-->
+            <div class="popup-content">
+                <img src="img/v5/test/v1/invio/territorio nero.png" class="popup-logo"><br>
+                <b>REGION</b><br> Sandwiched between the tonalite rock of the Adamello-Presanella ranges and the limestone of the Brenta Dolomites, the Val Rendena stretches from the hamlet of Verdesina up to Campo Carlo Magno, Madonna di Campiglio at
+                a height of 1,650 m. It is blessed with water, forests and pastures: a perfect ecosystem which boasts many different species of animals. The Adamello Brenta Natural Park offers protection for the natural beauty of the valley. Its characteristic
+                villages, full of history and traditions, are an expression of Alpine culture.
+
+                <br><br> The average weekly temperature for the last 7 days (<a style="font-size: 1em" th:text="${aweek}+'-'+${today}">22-28</a>) has been <a style="font-size: 1em" th:text="${tempM}">18</a>°
+
+                <br><br> Photo taken by the monitoring station on: <time th:text="${time}" style="font-size: 1em"></time><br>
+                <br>
+                <div class="container">
+                    <!--<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>-->
+                    <img class="monitor" id="stazione" th:src="'http://myxfarm.com/xsense/89462038005001835702/'+${pname}" alt="Nature" style="width:100%">
+                    <!--<div id="imgtext"></div>-->
+                </div>
+                <br>
+
+                <div class="container">
+                    <!--<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>-->
+                    <img id="expandedImg2" src="images/rendena/Az.Rendena_Territorio_1.jpg" alt="Nature" style="width:100%">
+                    <!--<div id="imgtext"></div>-->
+                </div>
+
+                <!-- The four columns -->
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_1.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_2.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Territorio_3.jpg" alt="expandedImg2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+            </div>
+
+            <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal3"></span>
+            <!--<a class="popup-logo" id="logo-popup3"></a>-->
+            <div class="popup-content">
+                <img src="img/v5/test/v1/invio/malga nera.png" class="popup-logo"><br>
+                <b>DAIRY</b><br> Malga Bandalors stands on the slopes of the Doss del Sabion above Giustino. In local dialect it is also known as the “Bregn de l’Ors”, the “bear’s drinking trough” because it appears that in the past bears would slake
+                their thirst at the wooden trough. Between June and September, the cows graze the mountain pastures here. There is a cowshed and an old cheesemaker’s hut: the herdsman looks after 107 cows. The cows spend their whole day grazing on the
+                pasture. At night, they return to the cowshed or, sometimes, they choose to sleep outside the building, beneath the stars.
+                <br><br>
+
+                <div class="container">
+                    <!--<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>-->
+                    <img id="expandedImg3" src="images/rendena/Az.Rendena_Malga_1_vista Bandalors.jpeg" alt="Nature" style="width:100%">
+                    <!--<div id="imgtext"></div>-->
+                </div>
+
+                <!-- The four columns -->
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Malga_1_vista Bandalors.jpeg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az.Rendena_Malga_2_abbeveratoio.jpg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+
+
+                <!-- The four columns -->
+                <!--<div class="row">-->
+
+                <!--&lt;!&ndash;<div class="column">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="column">&ndash;&gt;-->
+                <!--&lt;!&ndash;<img src="images/rendena/Az.Rendena_Malga_2_abbeveratoio.jpeg" alt="expandedImg3" style="width:100%" onclick="myFunction(this);">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</div>-->
+            </div>
+
+            <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal4"></span>
+            <div class="popup-content">
+
+                <!--<a class="popup-logo" id="logo-popup4"></a>-->
+                <img src="img/v5/test/v1/invio/pascolo nero.png" class="popup-logo"><br>
+                <b>PASTURE</b><br> Every day, our cows rtoam the slopes of the Doss del Sabion, going up towards Madonnina and then coming back down in the evening to the meadows around Malga Bandalors. They are always on the move because cows are inquisitive
+                and very active. They drink the pure water and feed on the flowers and fresh grass of the high pastures: their favourite meal is mountain thyme and “slavazöi”, a type of wild spinach. Thanks to this diet, their milk is flavoursome and
+                nutritious, rich in beta carotene.
+
+                <br><br>
+
+                <div class="videoyoutube">
+                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/CEx40HKWtOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="container">
+                    <!--<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>-->
+                    <img id="expandedImg4" src="images/rendena/Az. Rendena_Pascolo_1.JPG" alt="Nature" style="width:100%">
+                    <!--<div id="imgtext"></div>-->
+                </div>
+
+                <!-- The four columns -->
+                <div class="row">
+                    <div class="column">
+                        <img src="images/rendena/Az. Rendena_Pascolo_1.JPG" alt="expandedImg4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/rendena/Az. Rendena_Pascolo_2.JPG" alt="expandedImg4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+
+            </div>
+            <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal5"></span>
+            <!--<a class="popup-logo" id="logo-popup5"></a>-->
+            <div class="popup-content">
+
+                <img src="img/v5/test/v1/invio/produzione nero.png" class="popup-logo"><br>
+
+                <b>CHEESE</b><br> It takes 45 litres of milk to produce a 4.5 kg cheese. Milk, rennet, salt.... and the craft of the cheesemaker: these are the secrets of a good Alpine dairy cheese. Its taste reflects the flavours of the grass which the
+                Rendena cows eat. Its aroma and flavour are also influenced by the ageing time:
+                <br> 5 months at an average temperature of 10.5°C.<br><br>
+                <a style="font-size: 0.8em"><b>Azienda Agricola<br>
+                Fattoria Antica Rendena</b> </a><br><br>
+                <a href="http://www.fattoria-rendena.it" style="font-size: 0.8em">www.fattoria-rendena.it</a>
+            </div>
+
+            <!--<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!4v1561649609848!6m8!1m7!1sCAoSLEFGMVFpcE80RzJHYkxybDlKVVFDQ3E2ajJpSHl5ZlRNamlPRzU4OGp2NjV2!2m2!1d46.215212853571!2d10.89957262079!3f168.37!4f0!5f1.3357038177820932" width="1000" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        // var modal = document.getElementsByClassName("modal");
+        // alert(modal);
+        // Get the button that opens the modal
+
+
+        var btn = document.getElementsByClassName("bottom-button");
+
+        var targetElement0 = document.querySelector("#modal0");
+        var targetElement1 = document.querySelector("#modal1");
+        var targetElement2 = document.querySelector("#modal2");
+        var targetElement3 = document.querySelector("#modal3");
+        var targetElement4 = document.querySelector("#modal4");
+        var targetElement5 = document.querySelector("#modal5");
+
+        // alert(btn);
+        // Get the <span> element that closes the modal
+        // var span = document.getElementsByClassName("close")[0];
+        // alert(span);
+        // When the user clicks the button, open the modal
+
+        for (var i = 0; i < btn.length; i++) {
+            var currentBtn = btn[i];
+            currentBtn.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "block";
+                bodyScrollLock.disableBodyScroll(targetElement0);
+                bodyScrollLock.disableBodyScroll(targetElement1);
+                bodyScrollLock.disableBodyScroll(targetElement2);
+                bodyScrollLock.disableBodyScroll(targetElement3);
+                bodyScrollLock.disableBodyScroll(targetElement4);
+                bodyScrollLock.disableBodyScroll(targetElement5);
+                $.scrollify.disable();
+
+            }, false);
+
+            var span = document.getElementsByClassName("close")[i];
+            span.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "none";
+                // bodyScrollLock.enableBodyScroll(targetElement);
+                // bodyScrollLock.clearAllBodyScrollLocks();
+                $.scrollify.enable();
+            })
+        }
+
+
+        function myFunction(imgs) {
+            var expandImg = document.getElementById(imgs.alt);
+            // var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            // imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        //     $.scrollify.disable();
+        // };
+
+        // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+        // };
+        //
+        // span = document.getElementsByClassName("close")[1];
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+        //
+        // };
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target === modal) {
+        //         modal.style.display = "none";
+        //         $.scrollify.enable()
+        //     }
+        // };
+    </script>
+
+
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+</body>
+
+</html>

@@ -1,0 +1,516 @@
+div.text {
+    font-family: testo;
+    position: absolute;
+    /*width: content-box;*/
+    /*position: center;*/
+    /*align-content: center;*/
+    /*margin: auto;*/
+    /* width: fit-content; */
+    /*width: 70%;*/
+    left: 50%;
+    /*right: 0;*/
+    padding-left: 2vw;
+    margin-top: 17vh;
+    margin-left: -25%;
+    margin-right: auto;
+    color: white;
+    /*position: center;*/
+    /*left: 50%;*/
+    /*padding-right: 20%;*/
+    /*margin-right: 30%;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+.popup-content img {
+    max-width: 100%;
+}
+
+.modal-content {
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-content-quiz {
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* @media screen and (min-device-width: 763px) {
+    html * {
+        font-size: 1.2em;
+    }
+    div.text {
+        position: absolute;
+        width: content-box;
+        position: center;
+        align-content: center;
+        margin: auto;
+        width: fit-content;
+        width: 70%;
+        left: 50%;
+        right: 0;
+        padding-left: 2vw;
+        margin-top: 17vh;
+        margin-left: -10%;
+        margin-right: auto;
+        color: white;
+        position: center;
+        left: 50%;
+        padding-right: 20%;
+        margin-right: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .page-logo {
+        position: absolute;
+        width: 15vh;
+        height: 15vh;
+        width: 70%;
+        left: 50%;
+        right: 0;
+        padding-left: 2vw;
+        margin-top: 2vh;
+        margin-left: -10%;
+        margin-right: auto;
+        color: white;
+    }
+} */
+
+.page {
+    /*background-image: url("img/v5/lines-button-2.png");*/
+    /*background-image: url("img/v5/cover-lines-logo-button.png");*/
+    background-image: url("img/v5/test/v1/page.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: top center;
+    /*background-size: 95vw 100vh;*/
+    /*background-size: 57vw 100vh;*/
+    /*background-color: #0b0b0b;*/
+    /*background-position-x: 32%;*/
+}
+
+.last {
+    background-image: url("static/img/v5/test/v1/invio/IphoneX ultima pagina landing.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: top center;
+}
+
+.cover {
+    /*background-image: url("img/v5/test/v1/cover.png"), url("img/test/Copertina/black.jpg");*/
+    /*-webkit-background-size: auto 100%, auto 50%;*/
+    /*background-size: auto 100%, auto 50%;*/
+    background-image: url("images/gallura/sfondo_posti_cover.png"), url("images/gallura/sfondo_posti_bn_cover.jpg");
+    /* -webkit-background-size: auto 100%, auto 100%; */
+    background-size: auto 100%, auto 100%;
+    background-position: top center, top center;
+    background-color: white;
+    /*background-size: 95vw 100vh;*/
+}
+
+.posti-section {
+    /*background-image: url("img/optimized/landing-vino200h.png");*/
+    background-repeat: no-repeat;
+    /*background-position: center center;*/
+    /*background-size: auto 100%;*/
+    /*height: 100vh;*/
+    /*min-height:100%;*/
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    /*text-align: center;*/
+    align-content: center;
+}
+
+.bottom-button {
+    /*background-image: url("img/test/cover-button.png");*/
+    background-size: contain;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 30vw;
+    /*top: 80vh;*/
+    /*position: absolute;*/
+    position: absolute;
+    left: 50%;
+    margin-left: 5%;
+    bottom: 5vh;
+    /*keep element on center*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    display: block;
+    /*vertical-align: bottom;*/
+    /*top: 60%;*/
+    /*bottom: 1%;*/
+    /*left: 45%;*/
+}
+
+.quiz-button {
+    /*background-image: url("img/test/cover-button.png");*/
+    background-size: contain;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 10vh;
+    width: 30vw;
+    display: block;
+}
+
+.close {
+    height: 10vh;
+    width: 15vw;
+    position: absolute;
+}
+
+.closeQuiz {
+    height: 8vh;
+    width: 10vw;
+    position: absolute;
+    left: 50%;
+    margin-left: -7.5vw;
+    margin-top: 2.5vh;
+    background-image: url("images/bloody-mary/up-arrow.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+}
+
+.blockchain-text {
+    color: white;
+    position: absolute;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*left: 50%;*/
+    /*margin-left: -20%;*/
+    width: 100%;
+    text-align: center;
+    top: 37%;
+    /*font-size: 1.4em;*/
+}
+
+.traccia-text {
+    color: black;
+    position: absolute;
+    /*left: auto;*/
+    /*right: auto;*/
+    /*text-align: center;*/
+    /*padding-right: auto;*/
+    /*padding-left: auto;*/
+    /*right: 50%;*/
+    /*padding-top: 53%;*/
+    width: 100%;
+    text-align: center;
+    top: 53%;
+    /*font-size: 1.1em;*/
+}
+
+.collaboration-logo {
+    position: absolute;
+    background-image: url("images/gallura/logo_gallura_cover.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+    /* margin-top: 16vh; */
+    height: 0;
+    width: 0;
+    left: 0%;
+    top: 50%;
+    display: block;
+}
+
+
+/* logo cover vincenzo */
+
+.logo-cover {
+    position: absolute;
+    margin-top: 16vh;
+    margin-left: -20vw;
+    width: 350px;
+    left: 50%;
+    top: 50%;
+    resize: both;
+}
+
+.page-logo {
+    position: absolute;
+    width: 26vw;
+    height: 10vh;
+    left: 50%;
+    top: 2vh;
+    color: white;
+    margin-left: -240px;
+}
+
+.page-logo-quiz {
+    position: absolute;
+    width: 16vw;
+    height: 7vh;
+    left: 81vw;
+    top: 15.5vh;
+    color: white;
+}
+
+.page-logo-quiz-1 {
+    position: absolute;
+    width: 16vw;
+    height: 7vh;
+    left: 44%;
+    top: 14%;
+    color: white;
+}
+
+#logo1 {
+    background-image: url("images/gallura/logo1.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+#logo2 {
+    background-image: url("images/gallura/logo2.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+#logo3 {
+    background-image: url("images/gallura/logo3.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+#logo4 {
+    background-image: url("images/gallura/logo4.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+#logo5 {
+    background-image: url("images/gallura/logo5.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.popup-logo {
+    margin-left: -10%;
+    width: 20vh;
+    height: 20vh;
+}
+
+p {
+    font-size: 250%;
+    color: white;
+}
+
+@media screen and (min-device-width: 763px) {
+    html * {
+        /* font-size: 1.2em; */
+    }
+    div.text {
+        position: absolute;
+        /*width: content-box;*/
+        /*position: center;*/
+        /*align-content: center;*/
+        /*margin: auto;*/
+        width: fit-content;
+        /*width: 70%;*/
+        left: 50%;
+        /*right: 0;*/
+        /*padding-left: 2vw;*/
+        margin-top: 17vh;
+        margin-left: -10%;
+        margin-right: auto;
+        color: white;
+        /*position: center;*/
+        /*left: 50%;*/
+        /*padding-right: 20%;*/
+        /*margin-right: 30%;*/
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+    }
+    .page-logo {
+        position: absolute;
+        width: 15vh;
+        height: 15vh;
+        left: 50%;
+        margin-left: -10%;
+        margin-right: auto;
+        color: white;
+    }
+}
+
+
+/*POPUP*/
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    /*z-index: 1; !* Sit on top *!*/
+    /*padding-top: 100px; !* Location of the box *!*/
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    height: auto;
+    min-height: 100%;
+    margin: auto;
+    border: 1px solid #888;
+    background-color: white;
+    background-image: url("images/bloody-mary/IphoneXgraficaApprofondimenti.png");
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.modal-content-quiz {
+    height: auto;
+    min-height: 100%;
+    margin: auto;
+    border: 1px solid #888;
+    background-color: white;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.popup-content {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 8vh;
+    margin-bottom: 10vw;
+}
+
+#page1 {
+    background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura1.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 100%, auto 100%;
+    background-position: top center, top center;
+}
+
+#page2 {
+    background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura2.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 100%, auto 100%;
+    background-position: top center, top center;
+}
+
+#page3 {
+    background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura3.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 100%, auto 100%;
+    background-position: top center, top center;
+}
+
+#page4 {
+    background-image: url("images/gallura/sfondo_posti_pag3.png"), url("images/gallura/Sfondi_Ipx_gallura4.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 100%, auto 100%;
+    background-position: top center, top center;
+}
+
+#page5 {
+    background-image: url("images/gallura/sfondo_posti_pag_finale.png"), url("images/gallura/Sfondi_Ipx_gallura5.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 100%, auto 100%;
+    background-position: top center, top center;
+}
+
+#specific-head {
+    font-size: 0.99em;
+}
+
+.column {
+    float: left;
+    width: 24%;
+    padding: 5px;
+}
+
+
+/* Style the images inside the grid */
+
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* The expanding image container */
+
+.container {
+    position: relative;
+    display: block;
+}
+
+
+/* Expanding image text */
+
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.videoyoutube {
+    height: 30vh;
+    overflow: hidden;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.videoyoutube iframe,
+.videoyoutube object,
+.videoyoutube embed {
+    height: 30vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.monitor {
+    -webkit-transform: rotate(180deg);
+    /* Chrome and other webkit browsers */
+    -moz-transform: rotate(180deg);
+    /* FF */
+    -o-transform: rotate(180deg);
+    /* Opera */
+    -ms-transform: rotate(180deg);
+    /* IE9 */
+    transform: rotate(180deg);
+    /* W3C compliant browsers */
+}
+
+#link {
+    color: white;
+}

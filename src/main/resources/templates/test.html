@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+    <!--<style>-->
+        <!--body {-->
+            <!--/*overflow-y: hidden;*/-->
+        <!--}-->
+        <!--.container {-->
+            <!--scroll-snap-type: y mandatory;-->
+            <!--overflow-y: scroll;-->
+        <!--}-->
+        <!--section {-->
+            <!--height: 100vh;-->
+            <!--scroll-snap-align: start;-->
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div class="container">-->
+        <!--<section id="section1">-->
+            <!--<h1>Section 1</h1>-->
+        <!--</section>-->
+        <!--<section id="section2">-->
+            <!--<h2>Section 2</h2>-->
+        <!--</section>-->
+        <!--<section id="section3">-->
+            <!--<h3>Section 3</h3>-->
+        <!--</section>-->
+    <!--</div>-->
+<!--</body>-->
+
+<!--<style>-->
+    <!--article {-->
+        <!--scroll-snap-type: y proximity;-->
+        <!--/* Reserve space for header plus some extra space for sneak peeking. */-->
+        <!--scroll-padding-top: 15vh;-->
+        <!--overflow-y: scroll;-->
+    <!--}-->
+    <!--section {-->
+        <!--/* Snap align start. */-->
+        <!--scroll-snap-align: start;-->
+        <!--height: 100vh;-->
+    <!--}-->
+    <!--header {-->
+        <!--position: fixed;-->
+        <!--height: 10vh;-->
+    <!--}-->
+<!--</style>-->
+
+<!--<article>-->
+    <!--<header> Header </header>-->
+    <!--<section> Section One </section>-->
+    <!--<section> Section Two </section>-->
+    <!--<section> Section Three </section>-->
+<!--</article>-->
+<!--<head>-->
+    <!--<style>-->
+
+        <!--.page {-->
+            <!--/* Defines the top of each page as the-->
+               <!--edge that should be used for snapping */-->
+            <!--scroll-snap-align: start none;-->
+            <!--height: 100vh;-->
+        <!--}-->
+        <!--.docScroller {-->
+            <!--width: 500px;-->
+            <!--overflow-x: hidden;-->
+            <!--overflow-y: auto;-->
+            <!--/* Specifies that each element’s snap area should-->
+               <!--align with a 100px offset from the top edge. */-->
+            <!--scroll-padding: 100px 0 0;-->
+            <!--/* Encourages scrolling to end at a snap position when the-->
+                <!--operation completes, if it is near a snap position */-->
+            <!--scroll-snap-type: y mandatory;-->
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div class="docScroller">-->
+        <!--<div class="page">Page 1</div>-->
+        <!--<div class="page">Page 2</div>-->
+        <!--<div class="page">Page 3</div>-->
+        <!--<div class="page">Page 4</div>-->
+    <!--</div>-->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<!--</body>-->
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="/style.css">-->
+</head>
+
+<style>
+    html {
+        padding: 0;
+        margin: 0;
+        /*--bar-height: 100px;*/
+        /*--extra-space: 60px;*/
+    }
+
+    body {
+        overflow: scroll;
+
+        scroll-snap-type: y mandatory;
+        /*scroll-snap-stop: always;*/
+        /* Reserve space for header and additional space so above page are visible a bit*/
+        /*scroll-padding-top:  calc(var(--bar-height) + var(--extra-space));*/
+
+        position: absolute;
+
+        top:0;
+        bottom:0;
+        left: 0;
+        right: 0;
+        /*padding: var(--bar-height) 0 0 0;*/
+
+        /* Enable Safari touch scrolling physics which is needed for scroll snap */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    section {
+        scroll-snap-align: start; /* snap align start */
+
+        height: 100vh;
+        min-height:100%;
+        background-repeat:no-repeat;
+        background-position: center center;
+        padding: 0;
+        /*background-size: auto 100%;*/
+        /*-webkit-background-size: auto 100%;*/
+        /*-moz-background-size: auto 100%;*/
+        /*-o-background-size: auto 100%;*/
+        background-size: auto 100%;
+        -webkit-background-size: auto 100%;
+        -moz-background-size: auto 100%;
+        -o-background-size: auto 100%;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+
+        /*border-top: 2px black solid;*/
+        /*font-size: 36px;*/
+    }
+
+    section.large {
+        height: 100vh;
+    }
+    section.medium {
+        height: 60vh;
+    }
+    section.small {
+        height: 30vh;
+    }
+
+    #section01 {
+        /*background-color: #007bff;*/
+        background-image: url("img/optimized/landing-vino200h.png");
+    }
+
+    #section02 {
+        background-image: url("img/optimized/landing-vino200h-1.png");
+    }
+    #section03 {
+        /*background-color: #007bff;*/
+        background-image: url("img/optimized/landing-vino200h-2.png");
+
+    }
+    #section04 {
+        background-image: url("img/optimized/landing-vino200h-3.png");
+
+    }
+    #section05 {
+        background-image: url("img/optimized/landing-vino200h-4.png");
+        /*background-color: #007bff;*/
+    }
+
+    #section06 {
+        background-image: url("img/optimized/landing-vino200h-5.png");
+        /*background-color: #007bff;*/
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: bottom;
+        /*visibility: hidden;*/
+        /*width: 50%;*/
+        /*min-height: 100%;*/
+        /*height: 100vh;*/
+        /*position: absolute;*/
+        /*position: absolute;*/
+
+        bottom: 0;
+
+        background-size: cover;
+        text-align: center;
+
+    }
+
+    .next-button {
+        position: relative;
+        bottom: 10%;
+        left: 40%;
+        height: 10%;
+        width: 20%;
+        background-color: transparent;
+    }
+
+
+
+    /*article > section:nth-of-type(1) {*/
+        /*background-color: #DCEDC8;*/
+    /*}*/
+    /*article > section:nth-of-type(2) {*/
+        /*background-color: #2196f3;*/
+    /*}*/
+    /*article >  section:nth-of-type(3) {*/
+        /*background-color: #26a69a;*/
+    /*}*/
+    /*article >  section:nth-of-type(4) {*/
+        /*background-color: #cddc39;*/
+    /*}*/
+    /*article > section:nth-of-type(5) {*/
+        /*background-color: #ff9800;*/
+    /*}*/
+
+
+    /*header {*/
+        /*position: fixed;*/
+
+        /*display: flex;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+
+
+        /*height: var(--bar-height);*/
+        /*width: 100%;*/
+        /*top: 0;*/
+        /*padding: 0;*/
+
+        /*background: #8BC34A;*/
+        /*color: #212121;*/
+        /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+    /*}*/
+</style>
+
+
+<body><!--<header>-->
+        <!--🐙🐈🐇🐿️🦔 <br>-->
+        <!--🌷🌻▫️🌻▫️ <br>-->
+        <!--▫️🌻🌸🍃🦔 <br>-->
+    <!--</header>-->
+
+<div>
+    <section id="section01" class="large" >
+        <!--<img src="img/optimized/posti-lines-button.png" class="center">-->
+        <!--<a class="posti-button next-section"><button>btn</button></a>-->
+        <a  id="button-next1" class="center next-button" href="#section02"></a>
+
+    </section>
+</div>
+<div>
+    <section id="section02" class="large">
+        <a  id="button-next2" class="center next-button" href="#section03"><strong>x</strong></a>
+    </section>
+</div>
+<div>
+<section id="section03" class="large">
+    <a  id="button-next3" class="center next-button" href="#section04"><strong>x</strong></a>
+    </section>
+</div>
+<div>
+
+<section id="section04" class="large" >
+    <a  id="button-next4" class="center next-button" href="#section05"><strong>x</strong></a>
+    </section>
+</div>
+<section id="section05" class="large">
+    <a  id="button-next5" class="center next-button" href="#section06"><strong>x</strong></a>
+    </section>
+<section id="section06" class="large">
+    <a  id="button-next6" class="center next-button" href="#section01"><strong>x</strong></a>
+</section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/test2.js"></script>
+</body>
+
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--<script src= src="https://code.jquery.com/jquery-3.4.1.js"></script>-->
+
+
+
+
+</html>
+
+</html>

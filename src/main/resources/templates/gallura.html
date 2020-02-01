@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no" />-->
+
+    <meta charset="UTF-8">
+    <title>L'aragosta alla catalana verificata blockchain</title>
+    <meta name="description" content="pOsti ti propone ricette certificate dai migliori Chef del mondo" />
+
+    <link rel="icon" type="image/png" href="../static/images/gallura/favicon.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/bodyScrollLock.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        html {
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        
+        body {
+            margin: 0;
+            font-size: 40pt;
+        }
+        
+        @font-face {
+            font-family: titolo;
+            src: url('images/gallura/font/titolo.otf');
+        }
+        
+        @font-face {
+            font-family: sottotitolo;
+            src: url('images/gallura/font/sottotitolo.ttf');
+        }
+        
+        @font-face {
+            font-family: testo;
+            src: url('images/gallura/font/testo.ttf');
+        }
+        
+        div.text {
+            font-family: testo;
+            position: absolute;
+            left: 22%;
+            color: white;
+            font-weight: 900;
+            top: 18%;
+        }
+        
+        .head-title-text {
+            font-family: titolo;
+            font-weight: 100;
+            font-size: 2.8em;
+            line-height: normal;
+        }
+        
+        .head-text {
+            font-family: sottotitolo;
+            font-weight: 100;
+            font-size: 1.15em;
+            line-height: normal;
+        }
+        
+        .parag-title {
+            font-size: 0.9em;
+            text-decoration: underline;
+            line-height: normal;
+            font-weight: 900;
+        }
+        
+        .parag {
+            font-size: 0.85em;
+            line-height: 75%;
+            font-weight: 700;
+        }
+        
+        .popup-content img {
+            max-width: 100%;
+        }
+        /* .modal-content {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .modal-content-quiz {
+            -webkit-overflow-scrolling: touch;
+        } */
+        
+        .posti-section {
+            background-repeat: no-repeat;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            align-content: center;
+        }
+        
+        .cover {
+            background-image: url("images/gallura/cover.png"), url("images/gallura/sfondo_posti_bn_cover.jpg");
+            -webkit-background-size: auto 100%, 100% 100%;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+            background-color: white;
+        }
+        
+        .page {
+            /* nessuna regola */
+            background-color: transparent;
+        }
+        
+        .bottom-button {
+            background-image: url("images/gallura/cover-button.png");
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            height: 8vh;
+            width: 31vw;
+            position: absolute;
+            margin-left: 5%;
+            bottom: 5vh;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            top: 87%;
+            bottom: 1%;
+            left: 69%;
+        }
+        /* .quiz-button {
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 10vh;
+            width: 30vw;
+            display: block;
+        } */
+        
+        .close {
+            height: 10vh;
+            width: 15vw;
+            position: absolute;
+        }
+        
+        .blockchain-text {
+            color: white;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 37%;
+        }
+        
+        .traccia-text {
+            color: black;
+            position: absolute;
+            /*left: auto;*/
+            /*right: auto;*/
+            /*text-align: center;*/
+            /*padding-right: auto;*/
+            /*padding-left: auto;*/
+            /*right: 50%;*/
+            /*padding-top: 53%;*/
+            width: 100%;
+            text-align: center;
+            top: 52%;
+            /*font-size: 1.1em;*/
+        }
+        /* .collaboration-logo {
+            position: absolute;
+            background-image: url("images/gallura/logo_gallura_cover.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: top center;
+            height: 0;
+            width: 0;
+            left: 0%;
+            top: 50%;
+            display: block;
+        } */
+        /* logo cover vincenzo */
+        
+        .cover-logo {
+            position: absolute;
+            margin-top: 16vh;
+            margin-left: -26vw;
+            width: 60%;
+            left: 50%;
+            top: 50%;
+            resize: both;
+        }
+        
+        .page-logo {
+            position: absolute;
+            width: 30vw;
+            height: 15vh;
+            left: 14%;
+            top: 0%;
+            color: white;
+        }
+        
+        #logo1 {
+            background-image: url("images/gallura/logo1.png");
+            background-repeat: no-repeat;
+            left: 9%;
+            background-size: auto 100%;
+        }
+        
+        #logo2 {
+            background-image: url("images/gallura/logo2.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo3 {
+            background-image: url("images/gallura/logo3.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo4 {
+            background-image: url("images/gallura/logo4.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        #logo5 {
+            background-image: url("images/gallura/logo5.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        
+        .popup-logo {
+            margin-left: -10%;
+            width: 20vh;
+            height: 20vh;
+        }
+        /* p {
+            font-size: 250%;
+            color: white;
+        } */
+        /*POPUP*/
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            /*z-index: 1; !* Sit on top *!*/
+            /*padding-top: 100px; !* Location of the box *!*/
+            left: 0;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        
+        .modal-content {
+            height: auto;
+            min-height: 100%;
+            margin: auto;
+            border: 1px solid #888;
+            background-color: white;
+            background-image: url("images/gallura/sfondo_posti_pag_approfondimenti.png");
+            background-size: 100% auto;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        .modal-content-quiz {
+            height: auto;
+            min-height: 100%;
+            margin: auto;
+            border: 1px solid #888;
+            background-color: white;
+            background-size: 100% auto;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        
+        .popup-content {
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-top: 8vh;
+            margin-bottom: 10vw;
+        }
+        
+        #page1 {
+            background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura1.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page2 {
+            background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura2.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page3 {
+            background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura3.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page4 {
+            background-image: url("images/gallura/sfondo_posti_pag_intermedia.png"), url("images/gallura/Sfondi_Ipx_gallura4.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        
+        #page5 {
+            background-image: url("images/gallura/sfondo_posti_pag_finale.png"), url("images/gallura/Sfondi_Ipx_gallura5.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 100%, auto 100%;
+            background-position: top center, top center;
+        }
+        /*photogallery inside modal*/
+        /* The grid: Four equal columns that floats next to each other */
+        /* .column {
+            float: left;
+            width: 24%;
+            padding: 5px;
+        } */
+        /* Style the images inside the grid */
+        /* .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        
+        .column img:hover {
+            opacity: 1;
+        } */
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* The expanding image container */
+        
+        .container {
+            position: relative;
+            display: block;
+        }
+        /* Expanding image text */
+        
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        /* Closable button inside the expanded image */
+        /*.closebtn {*/
+        /*position: absolute;*/
+        /*top: 10px;*/
+        /*right: 15px;*/
+        /*color: white;*/
+        /*font-size: 35px;*/
+        /*cursor: pointer;*/
+        /*}*/
+        /*img {*/
+        /*image-orientation: from-image;*/
+        /*}*/
+        
+        .videoyoutube {
+            height: 30vh;
+            overflow: hidden;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .videoyoutube iframe,
+        .videoyoutube object,
+        .videoyoutube embed {
+            height: 30vh;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        
+        .monitor {
+            -webkit-transform: rotate(180deg);
+            /* Chrome and other webkit browsers */
+            -moz-transform: rotate(180deg);
+            /* FF */
+            -o-transform: rotate(180deg);
+            /* Opera */
+            -ms-transform: rotate(180deg);
+            /* IE9 */
+            transform: rotate(180deg);
+            /* W3C compliant browsers */
+        }
+        
+        #link {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="posti-section cover" id="cover">
+
+        <!-- <a class="collaboration-logo"></a> -->
+        <!-- <a id="link" style="position: absolute;text-align: center; font-size: 1.5em; padding-left: 3%; padding-top: 3%" href="/?lang=en">EN</a> -->
+        <a class="blockchain-text">traccia in <b>blockchain</b></a>
+        <a class="traccia-text">l'<b>aragosta alla catalana</b> di </a>
+        <a class="bottom-button" data-modal="modal0"></a>
+        <img src="images/gallura/logo_gallura_cover.png" class="cover-logo">
+    </section>
+
+    <section class="posti-section page" id="page1">
+        <a class="page-logo" id="logo1"></a>
+        <div class="text">
+            <a class="head-title-text">Provenienza</a><br>
+            <a class="head-text"> Cabras<br>
+                Sardegna</a><br> Latitudine: 39°55'55"56 N<br> Longitudine: 08°32'2"04 E</a>
+            <br><br>
+        </div>
+        <a class="bottom-button" data-modal="modal1"></a>
+    </section>
+
+    <section class="posti-section page" id="page2">
+        <!--<a class="bottom-button-page"></a>-->
+        <a class="page-logo" id="logo2"></a>
+        <div class="text">
+            <a class="head-title-text">Habitat</a><br>
+            <a class="head-text">Mar Mediterraneo</a><br> La giusta salinità e<br> le correnti creano<br> l’habitat ideale
+
+        </div>
+        <a class="bottom-button" data-modal="modal2"></a>
+    </section>
+
+    <section class="posti-section page" id="page3">
+        <a class="page-logo" id="logo3"></a>
+        <div class="text">
+            <a class="head-title-text">Trasporto</a><br>
+            <a class="head-text"> In nave Tirrenia.</a><br> L'aragosta è<br> stata trasportata<br> il
+            <a id="data_trasporto"></a>
+            </b><br>
+        </div>
+        <a class="bottom-button" data-modal="modal3"></a>
+    </section>
+
+    <section class="posti-section page" id="page4">
+        <a class="page-logo" id="logo4"></a>
+        <div class="text">
+            <a class="head-title-text">Conservazione</a><br>
+            <a class="head-text"> Acquario Gallura</a><br> Tempo medio di<br> permanenza del<br> crostaceo: 60 ore<br>
+
+        </div>
+        <a class="bottom-button" data-modal="modal4"></a>
+    </section>
+
+    <section class="posti-section page" id="page5">
+        <a class="page-logo" id="logo5"></a>
+        <div class="text">
+            <a class="head-title-text">Preparazione</a><br>
+            <a class="head-text"> Data: </a>
+            <a class="head-text" id="data_preparazione"></a><br> Cottura: 18 minuti<br>La ricetta omaggia<br>la tradizione<br>dei pescatori<br>
+        </div>
+        <a class="bottom-button" data-modal="modal5"></a>
+    </section>
+
+    <!-- <script>
+        function jump() {
+            window.location = ("" + window.location).replace(/#[A-Za-z0-9_]*$/, '') + "#quiz";
+            alert("ciao");
+        }
+    </script> -->
+
+    <!-- <section class="posti-section" id="quiz">
+        <div class="modal-content">
+            <span class="closeQuiz" data-modal="quiz"></span>
+            <div class="popup-content" style="margin-top: 10vh">
+                <b>Firma il tuo Bloody Mary<br></b> Vuoi creare un nuovo cocktail?
+                <br>
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Inserisci i tuoi dati
+                <input type="text" placeholder="nome e cognome" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="nome_cognome">
+                <br>
+                <input type="text" placeholder="e-mail" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="e_mail">
+                <br>
+                <br>
+                <input type="checkbox" style="width: 25px; height: 25px" value="OK" id="form_privacy" onChange="azione()">
+                <span style="font-size: 0.7em">Ho letto l’informativa Privacy e acconsento al trattamento dei miei dati
+                    personali per le finalità sopra descritte</span>
+                <br>
+                <br><span style="font-size: 1.35em">&#8226;</span> &nbsp; Aggiungi il tuo ingrediente speciale
+                <br>
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px;  margin-top: 20px" value="cetriolo" />&nbsp;&nbsp; Cetriolo <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="aneto" /> &nbsp;&nbsp;Aneto<br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="brodo" /> &nbsp;&nbsp;Brodo di vongole <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="wasabi" /> &nbsp;&nbsp;Wasabi <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="gambero" /> &nbsp;&nbsp;Gambero<br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="pancetta" /> &nbsp;&nbsp;Pancetta croccante <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="basilico" /> &nbsp;&nbsp;Basilico <br />
+                <input type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" value="altro" />&nbsp;&nbsp;
+                <input type="text" style="height:40px; width: 35vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " placeholder="altro" id="altro"><br />
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Gioca con noi!
+                <input type="text" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px " placeholder="Il nome del tuo cocktail" id="nome_cocktail">
+                <br>
+                <span style="font-size: 0.7em">La tua nuova ricetta di Bloody Mary sarà tracciata in blockchain*</span>
+                <br>
+                <input value="invia" style="width: 80vw; height:80px; margin-top: 20px" />
+                <br><br>
+                <span style="font-size: 0.5em">*nei prossimi giorni riceverai il certificato digitale della tua
+                    ricetta</span>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Popup itself -->
+    <div id="modal0" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal0"></span>
+            <div class="popup-content" style="padding-top: 17%">
+                La blockchain è una tecnologia basata su un registro pubblico e distribuito, condiviso da più partecipanti di un network e fondato su una logica peer-to-peer. Il registro è strutturato come una catena di blocchi attraverso cui sono scambiate le transazioni:
+                la validazione è affidata a un meccanismo di consenso che investe tutti i nodi della rete. Le principali caratteristiche della tecnologia blockchain sono l’immutabilità del registro, la tracciabilità delle transazioni e la sicurezza basata
+                su tecniche crittografiche.
+                <br><br> Questo progetto è realizzato sulla piattaforma Blockchain Bitcoin .
+                <br>
+                <a href="#">Verifica le informazioni su blockchain</a>
+                <!-- <a href="http://blockchain.posti.world:3309">Verifica le informazioni su blockchain</a> -->
+                <br><br> Promotori
+                <br>
+                <div style="font-size: 0.8em"><a href="http://posti.world">pOsti</a>
+                    <a href="https://www.ristorantegallura.it/">Ristorante Gallura Parioli</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="quiz" class="modal">
+        <div class="modal-content-quiz">
+            <span class="closeQuiz" data-modal="quiz"></span>
+            <div class="popup-content" style="margin-top: 10vh">
+                <b>Firma il tuo Bloody Mary<br></b>
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Inserisci i tuoi dati
+                <br>
+                <input type="text" onclick="javascript:bgWhiteNomeCognome()" placeholder="nome e cognome" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="nome_cognome">
+                <br>
+                <input type="text" onclick="javascript:bgWhiteMail()" placeholder="e-mail" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " id="e_mail">
+                <br>
+                <br>
+                <input type="checkbox" style="width: 25px; height: 25px" value="OK" id="form_privacy" onclick="javascript:bgWhitePrivacy()">
+                <span id="form_privacy_text" style="font-size: 0.7em">Ho letto l’informativa <a href="https://www.iubenda.com/privacy-policy/11564993" style="font-size: 1.0em" title="Privacy Policy ">privacy</a> e acconsento al trattamento dei miei dati   
+                    personali per le finalità sopra descritte</span>
+                <br>
+                <br><span style="font-size: 1.35em">&#8226;</span> &nbsp; <span id="ingredienti_text" style="font-size: 1.0em">Crea il tuo cocktail aggiungendo un ingrediente speciale</span>
+                <br>
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px;  margin-top: 20px" id="cetriolo" />&nbsp;&nbsp; Cetriolo <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="aneto" /> &nbsp;&nbsp;Aneto<br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="brodo" /> &nbsp;&nbsp;Brodo di vongole <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="wasabi" /> &nbsp;&nbsp;Wasabi <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="gambero" /> &nbsp;&nbsp;Gambero<br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="pancetta" /> &nbsp;&nbsp;Pancetta croccante <br />
+                <input onclick="javascript:bgWhiteIngredienti()" type="checkbox" style="margin-left: 10vw; width: 30px; height: 30px" id="basilico" /> &nbsp;&nbsp;Basilico <br />
+                <input onclick="javascript:bgWhiteIngredienti()" id="altro" type="text" style="margin-left: 10vw;height:40px; width: 50vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px; margin-top: 20px " placeholder="altro"><br
+                />
+                <br>
+                <span style="font-size: 1.35em">&#8226;</span> &nbsp; Dai un nome al tuo cocktail e condividi la foto sui social con l’hashtag #bloodymarydigitale <br><br> <input onclick="javascript:bgWhiteNomeCocktail()" type="text" style="height: 50px; width: 80vw; font-size: 0.9em; border-bottom: 3px solid black; border-top: 0px; border-right: 0px; border-left: 0px "
+                    placeholder="Il nome del tuo cocktail" id="nome_cocktail">
+                <br><br> Il miglior Mixologist del giorno riceverà un fantastico premio!
+                <br><br>
+                <span style="font-size: 0.75em"><b>La tua nuova ricetta di Bloody Mary sarà tracciata in blockchain</b></span>
+                <br>
+                <input type="submit" onclick="javascript:userActionPOST()" value="invia" style="width: 80vw; height:80px; margin-top: 20px;font-size : 50px">
+                <br>
+                <br>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal1"></span>
+            <div class="popup-content">
+                <br><br>
+                <b>PROVENIENZA</b> <br> Quest’aragosta è un prodotto locale, 100% italiano. Porta con sé il profumo del Mar Mediterraneo. È stata pescata nel Golfo di Oristano, il <b><a id="data_pesca"></b>. La pesca avviene tra marzo e ottobre, negli
+                altri mesi si sposta un po' più a Sud.
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal2"></span>
+            <div class="popup-content">
+                <br><br>
+                <b>HABITAT</b> <br> L’acqua di mare ha salinità media di 37% e temperatura media di 13°. Il retrogusto salino di questa aragosta dipende dal mare: è il Mediterraneo che differenzia nei colori e nei sapori la nostra aragosta da quella dei
+                mari tropicali. La giusta salinità e la giusta temperatura dell’acqua: la sua qualità è espressione del bellissimo mare sardo.
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal3"></span>
+            <div class="popup-content">
+                <br><br>
+                <b>TRASPORTO</b> <br> Una volta pescata, l’aragosta ha proseguito il suo viaggio in nave. Ha attraversato il mare
+                <b>avvolta in paglia umida</b> per poterle dare il massimo confort. È partita da Olbia ed è arrivata nel porto di
+                <b>Civitavecchia</b> dopo <b>7 ore</b> di navigazione.
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal4"></span>
+            <div class="popup-content">
+                <br><br>
+                <b>CONSERVAZIONE</b> <br> Dopo l’arrivo in terra ferma l’aragosta è stata collocata nell’acquario del ristorante di dimensioni 2,5mt x 70 x 70, super controllato e soggetto ogni 3 mesi alla completa sostituzione dei filtri. 850 litri d’acqua
+                con la giusta salinità e la giusta temperatura per ricreare il suo habitat marino ideale.
+                <b>Temperatura media dell’acqua: 13,5°</b>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal5"></span>
+            <div class="popup-content">
+                <br><br>
+                <b>PREPARAZIONE</b><br> Un’immersione in court-buillon alla temperatura di circa 80° è il segreto di questo piatto, insieme agli ingredienti di accompagno: verdurine fresche dell’orto, e un olio delicato, dedicato soltanto a questa ricetta.
+                L’aragosta alla catalana è un’esplosione di sapori, profumi, colori. Il suo mare e l’arte dello chef ne hanno preservato tutte le sue qualità organolettiche e nutrizionali. Proteine: 20,2/100 gr.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var data_preparazione, gg, mm, aaaa;
+        var data = new Date();
+        //data preparazione oggi
+        gg = data.getDate();
+        switch (data.getMonth()) {
+            case 0:
+                mm = "gennaio"
+                break;
+            case 1:
+                mm = "febbraio"
+                break;
+            case 2:
+                mm = "marzo"
+                break;
+            case 3:
+                mm = "aprile"
+                break;
+            case 4:
+                mm = "maggio"
+                break;
+            case 5:
+                mm = "giugno"
+                break;
+            case 6:
+                mm = "luglio"
+                break;
+            case 7:
+                mm = "agosto"
+                break;
+            case 8:
+                mm = "settembre"
+                break;
+            case 9:
+                mm = "ottobre"
+                break;
+            case 10:
+                mm = "novembre"
+                break;
+            case 11:
+                mm = "dicembre"
+                break;
+        }
+        aaaa = data.getFullYear();
+        data_preparazione = gg + " " + mm + " " + aaaa;
+        document.getElementById("data_preparazione").innerHTML = data_preparazione;
+
+        //data pesca e trasporto
+        //calcolo del giorno della settimana
+        var giorno = new Date();
+        var data_pesca_trasporto, GG, MM, AAAA;
+        var giorno_settimana = giorno.getDay();
+        console.log(giorno_settimana);
+        switch (giorno_settimana) {
+            case 0: //domenica
+                giorno.setDate(giorno.getDate() - 5);
+                break;
+            case 1: //lunedì
+                giorno.setDate(giorno.getDate() - 6);
+                break;
+            case 2: //martedì
+                giorno.setDate(giorno.getDate() - 7);
+                break;
+            case 3: //mercoledì
+                giorno.setDate(giorno.getDate() - 1);
+                break;
+            case 4: //giovedì
+                giorno.setDate(giorno.getDate() - 2);
+                break;
+            case 5: //venerdì
+                giorno.setDate(giorno.getDate() - 3);
+                break;
+            case 6: //sabato
+                giorno.setDate(giorno.getDate() - 4);
+                break;
+        }
+        GG = giorno.getDate();
+        switch (giorno.getMonth()) {
+            case 0:
+                MM = "gennaio"
+                break;
+            case 1:
+                MM = "febbraio"
+                break;
+            case 2:
+                MM = "marzo"
+                break;
+            case 3:
+                MM = "aprile"
+                break;
+            case 4:
+                MM = "maggio"
+                break;
+            case 5:
+                MM = "giugno"
+                break;
+            case 6:
+                MM = "luglio"
+                break;
+            case 7:
+                MM = "agosto"
+                break;
+            case 8:
+                MM = "settembre"
+                break;
+            case 9:
+                MM = "ottobre"
+                break;
+            case 10:
+                MM = "novembre"
+                break;
+            case 11:
+                MM = "dicembre"
+                break;
+        }
+
+        AAAA = giorno.getFullYear();
+        data_pesca_trasporto = GG + " " + MM + " " + AAAA;
+        document.getElementById("data_trasporto").innerHTML = data_pesca_trasporto;
+        document.getElementById("data_pesca").innerHTML = data_pesca_trasporto;
+    </script>
+
+
+    <script>
+        // Get the modal
+        // var modal = document.getElementsByClassName("modal");
+        // alert(modal);
+        // Get the button that opens the modal
+
+        var btn = document.getElementsByClassName("bottom-button");
+        var targetElement0 = document.querySelector("#modal0");
+        var targetElement1 = document.querySelector("#modal1");
+        var targetElement2 = document.querySelector("#modal2");
+        var targetElement3 = document.querySelector("#modal3");
+        var targetElement4 = document.querySelector("#modal4");
+        var targetElement5 = document.querySelector("#modal5");
+
+        // alert(btn);
+        // Get the <span> element that closes the modal
+        // var span = document.getElementsByClassName("close")[0];
+        // alert(span);
+        // When the user clicks the button, open the modal
+
+        for (var i = 0; i < btn.length; i++) {
+            var currentBtn = btn[i];
+            currentBtn.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "block";
+                bodyScrollLock.disableBodyScroll(targetElement0);
+                bodyScrollLock.disableBodyScroll(targetElement1);
+                bodyScrollLock.disableBodyScroll(targetElement2);
+                bodyScrollLock.disableBodyScroll(targetElement3);
+                bodyScrollLock.disableBodyScroll(targetElement4);
+                bodyScrollLock.disableBodyScroll(targetElement5);
+
+                $.scrollify.disable();
+
+            }, false);
+
+            var span = document.getElementsByClassName("close")[i];
+            span.addEventListener("click", function() {
+                var modal = document.getElementById(this.dataset.modal);
+                modal.style.display = "none";
+                // bodyScrollLock.enableBodyScroll(targetElement);
+                // bodyScrollLock.clearAllBodyScrollLocks();
+                $.scrollify.enable();
+            })
+        }
+
+        //Pulsante quiz
+        // var btnQuiz = document.getElementsByClassName("quiz-button");
+        // var targetElementQuiz = document.querySelector("#quiz");
+        // for (var i = 0; i < btnQuiz.length; i++) {
+        //     var currentBtn = btnQuiz[i];
+        //     currentBtn.addEventListener("click", function() {
+        //         var modal = document.getElementById(this.dataset.modal);
+        //         modal.style.display = "block";
+        //         bodyScrollLock.disableBodyScroll(targetElementQuiz);
+        //         $.scrollify.disable();
+        //     }, false);
+
+        //     var span = document.getElementsByClassName("closeQuiz")[i];
+        //     span.addEventListener("click", function() {
+        //         var modal = document.getElementById(this.dataset.modal);
+        //         modal.style.display = "none";
+        //         // bodyScrollLock.enableBodyScroll(targetElement);
+        //         // bodyScrollLock.clearAllBodyScrollLocks();
+        //         $.scrollify.enable();
+        //     })
+        // }
+
+        // function myFunction(imgs) {
+        //     var expandImg = document.getElementById(imgs.alt);
+        //     // var imgText = document.getElementById("imgtext");
+        //     expandImg.src = imgs.src;
+        //     // imgText.innerHTML = imgs.alt;
+        //     expandImg.parentElement.style.display = "block";
+        // }
+
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        //     $.scrollify.disable();
+        // };
+
+        // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+        // };
+
+        // span = document.getElementsByClassName("close")[1];
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //     $.scrollify.enable();
+
+        // };
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target === modal) {
+        //         modal.style.display = "none";
+        //         $.scrollify.enable()
+        //     }
+        // };
+    </script>
+    </script>>
+
+    <script type="text/javascript">
+        (function(w, d) {
+            var loader = function() {
+                var s = d.createElement("script"),
+                    tag = d.getElementsByTagName("script")[0];
+                s.src = "https://cdn.iubenda.com/iubenda.js";
+                tag.parentNode.insertBefore(s, tag);
+            };
+            if (w.addEventListener) {
+                w.addEventListener("load", loader, false);
+            } else if (w.attachEvent) {
+                w.attachEvent("onload", loader);
+            } else {
+                w.onload = loader;
+            }
+        })(window, document);
+    </script>
+
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+    <!--<script type="text/javascript" src="js/html5gallery/html5gallery.js"></script>-->
+</body>
+
+</html>
