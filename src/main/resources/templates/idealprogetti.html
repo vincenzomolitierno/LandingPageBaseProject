@@ -58,7 +58,7 @@
         }
         
         #section1 {
-            display: inline-block;
+            display: block;
             /*background-color: #007bff;*/
         }
         
@@ -71,7 +71,8 @@
         }
         
         .content {
-            background-color: #007bff;
+            text-align: center;
+            background-color: lightblue;
             width: 100%;
         }
         
@@ -84,15 +85,20 @@
 
 <body>
     <section id="section1">
-        <p>Section 1</p>
-        <div class="content"></div>
+        <div class="content">
+            <h1>PROVA LETTURA SENSORE</h1>
+            <p>TEMPO LETTURA:
+                <a th:text="${sensor_time}"></a>
+            </p>
+            <p>PH:
+                <a th:text="${ph}"></a>
+            </p>
+            <p>nt1:
+                <a th:text="${nt1}"></a>
+            </p>
+
+        </div>
         <div class="info"></div>
-    </section>
-    <section id="section2">
-        <p>Section 2</p>
-    </section>
-    <section id="section3">
-        <p>Section 3</p>
     </section>
 </body>
 

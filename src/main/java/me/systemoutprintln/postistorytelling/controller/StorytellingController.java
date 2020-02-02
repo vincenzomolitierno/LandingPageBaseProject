@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Locale;
 
 @Controller
-public class StorytellingController {
+public class StorytellingController { 
 
     @GetMapping("/snap-scroll")
     public String index2(){
@@ -74,47 +74,28 @@ public class StorytellingController {
 
         if(ApiConnector.getPhoto().size()!=0) {
             p = ApiConnector.getPhoto().get(0).split(" ");
-//        System.out.println();
-
             time = p[1].substring(0, 19);
-
         }
         
-        // String[] pos = ApiConnector.getCoordinate().split(",");
-        //     System.out.println(pos[0] + " " + pos[1]);
-        //     System.out.println("pos: " + pos[0].split(",").length);
-        //     String[] lat = pos[0].split("\\.");
-        //     String[] lon = pos[1].split("\\.");
+        // String[] pos = ApiConnector.getCoordinate().split("/");
+        // String[] lat = pos[0].split(",");
+        // String[] lon = pos[1].split(",");
 
-        //     lat0 = lat[0];
-        //     lat1 = lat[1].substring(0, 2);
-        //     lat2 = lat[1].substring(3, 5);
+        // lat0 = lat[0];
+        // lat1 = lat[1].substring(0, 2);
+        // lat2 = lat[1].substring(3, 5);
 
-        //     lon0 = lon[0];
-        //     lon1 = lon[1].substring(0, 2);
-        //     lon2 = lon[1].substring(3, 5);
-
-        //     String tempMedia = ApiConnector.getTempMedia();
-        //     double tempMediaDouble = Double.parseDouble(tempMedia);
-        //     tempMediaRound = Math.round(tempMediaDouble * 100.0) / 100.0;
-
-        // }
-
-        String[] pos = ApiConnector.getCoordinate().split("/");
-        String[] lat = pos[0].split(",");
-        String[] lon = pos[1].split(",");
-
-        lat0 = lat[0];
-        lat1 = lat[1].substring(0, 2);
-        lat2 = lat[1].substring(3, 5);
-
-        lon0 = lon[0];
-        lon1 = lon[1].substring(0, 2);
-        lon2 = lon[1].substring(3, 5);
+        // lon0 = lon[0];
+        // lon1 = lon[1].substring(0, 2);
+        // lon2 = lon[1].substring(3, 5);
 
         // String tempMedia = ApiConnector.getTempMedia();
         // double tempMediaDouble = Double.parseDouble(tempMedia);
         // tempMediaRound = Math.round(tempMediaDouble * 100.0) / 100.0;
+
+        String ph = ApiConnector.getPH();
+        String nt1 = ApiConnector.getNT1();
+        String sensor_time = ApiConnector.getSensorTime();
 
         Locale.setDefault(Locale.ITALIAN);
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM");
@@ -135,12 +116,12 @@ public class StorytellingController {
         long weeksPassed = getFullWeeks(c2,c1) + 5;
         long weeksPassed2 = getFullWeeks(c2,c1) + 4;
 
-        model.addAttribute("lat0",lat0);
-        model.addAttribute("lat1",lat1);
-        model.addAttribute("lat2",lat2);
-        model.addAttribute("lon0",lon0);
-        model.addAttribute("lon1",lon1);
-        model.addAttribute("lon2",lon2);
+        // model.addAttribute("lat0",lat0);
+        // model.addAttribute("lat1",lat1);
+        // model.addAttribute("lat2",lat2);
+        // model.addAttribute("lon0",lon0);
+        // model.addAttribute("lon1",lon1);
+        // model.addAttribute("lon2",lon2);
 
         // if(p==null) {
         //     model.addAttribute("pname", null);
@@ -154,6 +135,11 @@ public class StorytellingController {
         // model.addAttribute("aweek", aweekago);
         // model.addAttribute("weeksPassed", 13);
         // model.addAttribute("weeksPassed2", 12);
+
+        model.addAttribute("ph",ph);
+        model.addAttribute("nt1",nt1);
+        model.addAttribute("sensor_time",sensor_time);
+
        
         if(language!=null && !language.equals("it")) return template+"-"+language;
         return template;

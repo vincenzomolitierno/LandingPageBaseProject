@@ -11,7 +11,7 @@
     <groupId>me.symvnstemoutprintln</groupId>
     <artifactId>posti-storytelling</artifactId>
     <version>0.3.2-SNAPSHOT</version>
-    <name>gallura</name>
+    <name>IoT</name>
     <description>Storytelling module for Springboot</description>
 
     <properties>
